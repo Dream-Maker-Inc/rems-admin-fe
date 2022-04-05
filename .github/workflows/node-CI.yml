@@ -20,4 +20,4 @@ jobs:
         working-directory: .
         run: |
           yarn install
-          yarn build
+          yarn build-storybook
