@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { MainDrawer } from ".";
+
+<Meta title={"Main/메인 사이드바"} component={MainDrawer} />
+
+# MainDrawer
+
+메인 사이드바
+
+export const Template = (args) => <MainDrawer {...args} />;
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
