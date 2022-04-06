@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { LoginLogo } from ".";
+
+<Meta title={"Login/로그인 로고"} component={LoginLogo} />
+
+# LoginLogo
+
+로그인 페이지 로고
+
+export const Template = (args) => <LoginLogo {...args} />;
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

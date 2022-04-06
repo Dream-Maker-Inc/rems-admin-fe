@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeProvider as EmotionThemeProvider } from "emotion-theming";
 import { lightTheme } from "../src/themes/CustomThemes";
+import "../src/index.css";
 
 const defaultTheme = lightTheme;
 
