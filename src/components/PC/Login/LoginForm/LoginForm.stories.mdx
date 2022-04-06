@@ -1,0 +1,42 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { LoginForm } from ".";
+import { useState } from "react";
+import { useArgs } from "@storybook/client-api";
+
+<Meta title={"Login/로그인 폼"} component={LoginForm} />
+
+# LoginForm
+
+로그인 페이지 폼
+
+export const Template = (args) => {
+  const [{}, updateArgs] = useArgs();
+  const handleIdChange = (v) => updateArgs({ idValue: v });
+  const handlePwChange = (v) => updateArgs({ pwValue: v });
+  const handleRememberChange = (v) => updateArgs({ rememberMe: v });
+  return (
+    <LoginForm
+      handleIdChange={handleIdChange}
+      handlePwChange={handlePwChange}
+      handleRememberChange={handleRememberChange}
+      handleLoginSubmit={() => alert("login ok")}
+      {...args}
+    />
+  );
+};
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      idValue: "",
+      pwValue: "",
+      rememberMe: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={LoginForm} />

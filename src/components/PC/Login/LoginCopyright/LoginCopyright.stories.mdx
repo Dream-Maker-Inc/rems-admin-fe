@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { LoginCopyright } from ".";
+
+<Meta title={"Login/로그인 카피라이트"} component={LoginCopyright} />
+
+# LoginCopyright
+
+로그인 페이지 카피라이트
+
+export const Template = (args) => <LoginCopyright {...args} />;
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
