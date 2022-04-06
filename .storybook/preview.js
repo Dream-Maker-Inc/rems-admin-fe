@@ -1,8 +1,8 @@
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeProvider as EmotionThemeProvider } from "emotion-theming";
-import { createTheme } from "@mui/material/styles";
+import { lightTheme } from "../src/themes/CustomThemes";
 
-const defaultTheme = createTheme();
+const defaultTheme = lightTheme;
 
 const withProviders = (Story, context) => (
   <EmotionThemeProvider theme={defaultTheme}>
