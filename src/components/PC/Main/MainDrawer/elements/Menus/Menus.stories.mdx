@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { Menus } from ".";
+
+<Meta title={"Main/사이드바 - 메뉴 섹션"} component={Menus} />
+
+# Menus
+
+메인 사이드바 - 메뉴 섹션
+
+export const Template = (args) => <Menus {...args} />;
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

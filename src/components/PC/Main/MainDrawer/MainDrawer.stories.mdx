@@ -11,5 +11,7 @@ import { MainDrawer } from ".";
 export const Template = (args) => <MainDrawer {...args} />;
 
 <Canvas>
-  <Story name="Default">{Template.bind({})}</Story>
+  <Story name="Default" args={{ isOpen: true }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>

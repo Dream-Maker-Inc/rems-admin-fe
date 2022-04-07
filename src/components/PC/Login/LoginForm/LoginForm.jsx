@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 
 const TextFieldColor = "#3c4044";
-const BackgroundColor = "#454a4e";
 const PersonIconUrl = `${process.env.PUBLIC_URL}/assets/icons/ic_person.png`;
 
 export const LoginForm = ({
@@ -100,7 +99,7 @@ export const LoginForm = ({
 
 const StyledCard = styled(Stack)`
   border-radius: 16px;
-  background-color: ${BackgroundColor};
+  background-color: #454a4e;
   padding: 70px 36px 24px 36px;
   width: 100%;
 `;

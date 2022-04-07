@@ -4,14 +4,15 @@ import { TreeItem, TreeView } from "@mui/lab";
 import { Stack, Typography } from "@mui/material";
 import { MenusModel } from "./Menus.model";
 
-const menuData = MenusModel;
-
 export const Menus = () => {
+  const menuData = MenusModel;
+  const handleMenuClick = (title) => alert(`title: ${title}`);
+
   return (
     <StyledTreeView
       defaultCollapseIcon={<ExpandMoreRounded />}
       defaultExpandIcon={<ExpandLessRounded />}
-      onNodeSelect={(e, v) => console.log(v)}
+      onNodeSelect={(_, v) => handleMenuClick(v)}
     >
       {menuData.map((it) => (
         <StyledTreeHead
@@ -43,6 +44,9 @@ const StyledTreeView = styled(TreeView)`
 `;
 
 const StyledTreeHead = styled(TreeItem)`
+  border-top: 1px solid #eeeeee33;
+  background-color: #2d3034;
+
   & .MuiTreeItem-content {
     flex-direction: row-reverse;
     padding: 12px 16px;
@@ -50,8 +54,10 @@ const StyledTreeHead = styled(TreeItem)`
 `;
 
 const StyledTreeItem = styled(TreeItem)`
+  background-color: #232629;
+
   & .MuiTreeItem-content {
-    padding-left: 48px;
+    padding-left: 48px !important;
   }
 
   & .MuiTreeItem-label::before {
