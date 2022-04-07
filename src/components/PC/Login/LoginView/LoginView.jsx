@@ -2,19 +2,11 @@ import { Stack } from "@mui/material";
 import { LoginLogo } from "../LoginLogo";
 import { LoginForm } from "../LoginForm";
 import { LoginCopyright } from "../LoginCopyright";
+import styled from "@emotion/styled";
 
 export const LoginView = () => {
   return (
-    <Stack
-      component={"article"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      minWidth={"1280px"}
-      height={"100%"}
-      spacing={"48px"}
-      padding={"120px"}
-      bgcolor={"#2f3539"}
-    >
+    <Root component={"article"}>
       <Stack maxWidth={"300px"}>
         <LoginLogo />
       </Stack>
@@ -22,6 +14,21 @@ export const LoginView = () => {
       <LoginForm />
 
       <LoginCopyright />
-    </Stack>
+    </Root>
   );
 };
+
+const Root = styled(Stack)`
+  min-width: 1440px;
+  height: 100%;
+  gap: 48px;
+  padding: 120px;
+  overflow: scroll;
+  background-color: #2f3539;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-height: 800px) {
+    justify-content: flex-start;
+  }
+`;
