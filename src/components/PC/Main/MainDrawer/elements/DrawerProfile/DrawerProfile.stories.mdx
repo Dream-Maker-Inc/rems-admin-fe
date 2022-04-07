@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { DrawerProfile } from ".";
+
+<Meta title={"Main/사이드바 - 프로필 섹션"} component={DrawerProfile} />
+
+# DrawerProfile
+
+메인 사이드바 - 프로필 섹션
+
+export const Template = (args) => <DrawerProfile {...args} />;
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
