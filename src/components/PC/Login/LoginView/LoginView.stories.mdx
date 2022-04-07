@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { LoginView } from ".";
+
+<Meta title={"Login/로그인 뷰"} component={LoginView} />
+
+# LoginView
+
+로그인 페이지 뷰
+
+export const Template = (args) => <LoginView {...args} />;
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
