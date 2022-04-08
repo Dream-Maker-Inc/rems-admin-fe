@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { MainTemplate } from ".";
+
+<Meta title={"Main/[Page] 메인화면 공통 레이아웃"} component={MainTemplate} />
+
+# MainTemplate
+
+메인화면 공통 레이아웃
+
+export const Template = (args) => <MainTemplate {...args} />;
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

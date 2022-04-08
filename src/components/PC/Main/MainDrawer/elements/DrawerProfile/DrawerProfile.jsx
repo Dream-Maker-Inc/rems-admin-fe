@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import {
   Avatar,
   Button,
@@ -36,19 +37,19 @@ export const DrawerProfile = () => {
   const handleLogout = () => alert("todo logout");
 
   return (
-    <Stack bgcolor={"#383a3d"} p={"24px"}>
-      <Stack direction={"row"} spacing={"16px"}>
+    <Root>
+      <ProfileSection>
         <Avatar src={profile.avatarUrl} alt={"avatar"} sx={{ color: "#fff" }} />
 
-        <Stack spacing={"8px"} alignItems={"flex-start"}>
+        <ProfileRight>
           <Typography>{profile.username}</Typography>
           <Button variant={"contained"} size={"small"} onClick={handleLogout}>
             로그아웃
           </Button>
-        </Stack>
-      </Stack>
+        </ProfileRight>
+      </ProfileSection>
 
-      <Stack aria-label={"셀렉터 섹션"} mt={"24px"}>
+      <SelctorSection>
         <Select
           size={"small"}
           value={selectValue}
@@ -60,7 +61,26 @@ export const DrawerProfile = () => {
             </MenuItem>
           ))}
         </Select>
-      </Stack>
-    </Stack>
+      </SelctorSection>
+    </Root>
   );
 };
+
+const Root = styled(Stack)`
+  background-color: #383a3d;
+  padding: 24px;
+`;
+
+const ProfileSection = styled(Stack)`
+  flex-direction: row;
+  gap: 16px;
+`;
+
+const ProfileRight = styled(Stack)`
+  gap: 8px;
+  align-items: flex-start;
+`;
+
+const SelctorSection = styled(Stack)`
+  margin-top: 24px;
+`;

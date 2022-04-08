@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { MainHeader } from ".";
+
+<Meta title={"Main/메인 헤더"} component={MainHeader} />
+
+# MainHeader
+
+메인 헤더
+
+export const Template = (args) => <MainHeader {...args} />;
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

@@ -1,1 +1,0 @@
-export { ManHeader } from "./ManHeader";
