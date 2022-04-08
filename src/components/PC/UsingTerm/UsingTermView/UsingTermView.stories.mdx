@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { UsingTermView } from ".";
+
+<Meta title={"Using-Term/[Page] 사용 동의 뷰"} component={UsingTermView} />
+
+# UsingTermView
+
+사용 동의 뷰
+
+export const Template = (args) => <UsingTermView {...args} />;
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
