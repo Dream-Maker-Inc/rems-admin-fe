@@ -23,7 +23,6 @@ const Root = styled(Stack)`
   height: 100%;
   gap: 48px;
   padding: 120px;
-  overflow: scroll;
   background-color: #2f3539;
   align-items: center;
   justify-content: center;
