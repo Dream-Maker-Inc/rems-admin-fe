@@ -1,11 +1,11 @@
 import { ThemeProvider } from "@mui/material/styles";
-import { MainTemplate } from "./components/PC/Main/MainTemplate";
+import { GroupSelectView } from "./components/PC/GroupSelect/GroupSelectView";
 import { lightTheme } from "./themes/CustomThemes";
 
 function App() {
   return (
     <ThemeProvider theme={lightTheme}>
-      <MainTemplate />
+      <GroupSelectView />
     </ThemeProvider>
   );
 }
