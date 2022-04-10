@@ -1,0 +1,23 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { ItemCard } from ".";
+
+<Meta title={"Group-Select/그룹 선택 아이템 카드"} component={ItemCard} />
+
+# ItemCard
+
+그룹 선택 아이템 카드
+
+export const Template = (args) => <ItemCard {...args} />;
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      imageUrl: `${process.env.PUBLIC_URL}/assets/images/senior_citizen.png`,
+      imageAlt: "경로당",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
