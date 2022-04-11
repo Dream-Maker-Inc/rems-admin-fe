@@ -1,5 +1,9 @@
 const baseTypographyOptions = {
   fontFamily: "Noto Sans KR",
+};
+
+export const laptopTypographyOptions = {
+  ...baseTypographyOptions,
   allVariants: {
     color: "#fff",
   },
@@ -8,6 +12,6 @@ const baseTypographyOptions = {
   },
 };
 
-export const lightTypographyOptions = {
+export const mobileTypographyOptions = {
   ...baseTypographyOptions,
 };

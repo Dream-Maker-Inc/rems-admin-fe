@@ -1,10 +1,10 @@
 import { createTheme } from "@mui/material/styles";
 import { laptopPalette, mobilePalette } from "./Color";
-import { lightTypographyOptions } from "./Typography";
+import { laptopTypographyOptions, mobileTypographyOptions } from "./Typography";
 
 export const laptopTheme = createTheme({
   palette: laptopPalette,
-  typography: lightTypographyOptions,
+  typography: laptopTypographyOptions,
   components: {
     MuiButton: {
       defaultProps: {
@@ -19,7 +19,7 @@ export const laptopTheme = createTheme({
 
 export const mobileTheme = createTheme({
   palette: mobilePalette,
-  typography: lightTypographyOptions,
+  typography: mobileTypographyOptions,
   components: {
     MuiButton: {
       defaultProps: {
