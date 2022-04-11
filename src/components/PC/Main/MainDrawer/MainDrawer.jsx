@@ -10,7 +10,10 @@ export const MainDrawer = ({ isOpen }) => {
                 <Surface>
                     <LogoSection />
                     <DrawerProfile />
-                    <Menus />
+
+                    <MenuSection>
+                        <Menus />
+                    </MenuSection>
                 </Surface>
             </CollapseAnimation>
         </Stack>
@@ -55,3 +58,15 @@ const LogoSection = () => (
         </Toolbar>
     </AppBar>
 );
+
+const MenuSection = styled(Stack)`
+    height: 100%;
+    overflow-y: scroll;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+`;
