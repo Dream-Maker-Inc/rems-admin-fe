@@ -8,7 +8,6 @@ import {
   TextField,
 } from "@mui/material";
 import { useState } from "react";
-import { MainTemplate } from "../../Main/MainTemplate";
 
 export const UsingTermView = () => {
   const [agreeAll, setAgreeAll] = useState(false);
