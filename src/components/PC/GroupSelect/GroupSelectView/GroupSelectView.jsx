@@ -31,21 +31,19 @@ export const GroupSelectView = () => {
   };
 
   return (
-    <MainTemplate>
-      <Stack p={"24px"}>
-        <GridContainer>
-          {models.map((it) => (
-            <GridItem key={it.id}>
-              <ItemCard
-                imageUrl={it.imageUrl}
-                imageAlt={it.imageAlt}
-                onClick={() => handleGroupClick(it.id)}
-              />
-            </GridItem>
-          ))}
-        </GridContainer>
-      </Stack>
-    </MainTemplate>
+    <Stack width={"100%"} height={"100%"} p={"24px"} bgcolor={"#303539"}>
+      <GridContainer>
+        {models.map((it) => (
+          <GridItem key={it.id}>
+            <ItemCard
+              imageUrl={it.imageUrl}
+              imageAlt={it.imageAlt}
+              onClick={() => handleGroupClick(it.id)}
+            />
+          </GridItem>
+        ))}
+      </GridContainer>
+    </Stack>
   );
 };
 
