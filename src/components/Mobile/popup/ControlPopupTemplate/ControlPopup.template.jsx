@@ -7,9 +7,9 @@ import {
   Typography,
 } from "@mui/material";
 
-export const ControlPopupTemplate = ({ children, onClick }) => {
+export const ControlPopupTemplate = ({ children, open, onClose, onClick }) => {
   return (
-    <Dialog open={true} fullWidth>
+    <Dialog fullWidth open={open} onClose={onClose}>
       <Stack>
         <AppBar position="static" elevation={0}>
           <Toolbar sx={{ bgcolor: "primary.main", justifyContent: "center" }}>

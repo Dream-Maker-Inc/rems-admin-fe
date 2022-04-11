@@ -11,7 +11,10 @@ import { ControlPopupTemplate } from ".";
 export const Template = (args) => <ControlPopupTemplate {...args} />;
 
 <Canvas>
-  <Story name="Default" args={{ children: "콘텐츠 크기에 따라 height 변동" }}>
+  <Story
+    name="Default"
+    args={{ open: true, children: "콘텐츠 크기에 따라 height 변동" }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
