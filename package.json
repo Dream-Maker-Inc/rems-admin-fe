@@ -51,8 +51,8 @@
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.5.1",
-    "@mui/material": "^5.5.3",
     "@mui/lab": "^5.0.0-alpha.76",
+    "@mui/material": "^5.5.3",
     "@storybook/addon-actions": "^6.4.20",
     "@storybook/addon-essentials": "^6.4.20",
     "@storybook/addon-interactions": "^6.4.20",
@@ -63,6 +63,7 @@
     "@storybook/preset-create-react-app": "^4.1.0",
     "@storybook/react": "^6.4.20",
     "@storybook/testing-library": "^0.0.9",
+    "storybook-addon-multi-theme": "^0.0.8",
     "webpack": "^5.71.0"
   }
 }

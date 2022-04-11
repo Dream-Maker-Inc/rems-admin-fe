@@ -1,18 +1,28 @@
-export const lightColor = {
+export const laptopColor = {
   primary: "#91a23c",
   secondary: "#e83b3e",
 };
 
-export const lightPalette = {
+export const laptopPalette = {
   primary: {
-    main: lightColor.primary,
+    main: laptopColor.primary,
     contrastText: "#fff",
   },
   secondary: {
-    main: lightColor.secondary,
+    main: laptopColor.secondary,
   },
   text: {
     primary: "#fff",
   },
   mode: "dark",
+};
+
+export const mobileColor = {
+  primary: "#37656d",
+};
+
+export const mobilePalette = {
+  primary: {
+    main: mobileColor.primary,
+  },
 };
