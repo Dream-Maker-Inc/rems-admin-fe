@@ -4,13 +4,13 @@ import { laptopTheme, mobileTheme } from "./themes/CustomThemes";
 import { useCustomMediaQuery } from "./themes/UseCustomMediaQuery";
 
 function App() {
-  const { isTablet } = useCustomMediaQuery();
+    const { isTablet } = useCustomMediaQuery();
 
-  return (
-    <ThemeProvider theme={isTablet ? mobileTheme : laptopTheme}>
-      <GroupSelectView />
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider theme={isTablet ? mobileTheme : laptopTheme}>
+            <GroupSelectView />
+        </ThemeProvider>
+    );
 }
 
 export default App;
