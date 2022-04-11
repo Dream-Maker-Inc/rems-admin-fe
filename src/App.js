@@ -1,10 +1,13 @@
 import { ThemeProvider } from "@mui/material/styles";
 import { GroupSelectView } from "./components/PC/GroupSelect/GroupSelectView";
-import { lightTheme } from "./themes/CustomThemes";
+import { laptopTheme, mobileTheme } from "./themes/CustomThemes";
+import { useCustomMediaQuery } from "./themes/UseCustomMediaQuery";
 
 function App() {
+  const { isTablet } = useCustomMediaQuery();
+
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={isTablet ? mobileTheme : laptopTheme}>
       <GroupSelectView />
     </ThemeProvider>
   );

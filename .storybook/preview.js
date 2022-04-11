@@ -1,17 +1,9 @@
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeProvider as EmotionThemeProvider } from "emotion-theming";
-import { lightTheme } from "../src/themes/CustomThemes";
+import { laptopTheme, mobileTheme } from "../src/themes/CustomThemes";
 import "../src/index.css";
 
-const defaultTheme = lightTheme;
-
-const withProviders = (Story, context) => (
-  <EmotionThemeProvider theme={defaultTheme}>
-    <ThemeProvider theme={defaultTheme}>
-      <Story {...context} />
-    </ThemeProvider>
-  </EmotionThemeProvider>
-);
+const withProviders = (Story, context) => <Story {...context} />;
 
 export const decorators = [withProviders];
 
@@ -22,5 +14,30 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  multiTheme: {
+    list: [
+      {
+        name: "Laptop",
+        selectedByDefault: true,
+        wrapperComponent: ({ children }) => {
+          return (
+            <EmotionThemeProvider theme={laptopTheme}>
+              <ThemeProvider theme={laptopTheme}>{children}</ThemeProvider>
+            </EmotionThemeProvider>
+          );
+        },
+      },
+      {
+        name: "Mobile",
+        wrapperComponent: ({ children }) => {
+          return (
+            <EmotionThemeProvider theme={mobileTheme}>
+              <ThemeProvider theme={mobileTheme}>{children}</ThemeProvider>
+            </EmotionThemeProvider>
+          );
+        },
+      },
+    ],
   },
 };
