@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { ControlPopup } from ".";
+
+<Meta title={"Control/[Popup] 설비 제어 팝업"} component={ControlPopup} />
+
+# ControlPopup
+
+설비 제어 팝업
+
+export const Template = (args) => <ControlPopup {...args} />;
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

@@ -11,15 +11,11 @@ import { useArgs } from "@storybook/client-api";
 로그인 페이지 폼
 
 export const Template = (args) => {
-  const [{}, updateArgs] = useArgs();
-  const handleIdChange = (v) => updateArgs({ idValue: v });
-  const handlePwChange = (v) => updateArgs({ pwValue: v });
-  const handleRememberChange = (v) => updateArgs({ rememberMe: v });
   return (
     <LoginForm
-      handleIdChange={handleIdChange}
-      handlePwChange={handlePwChange}
-      handleRememberChange={handleRememberChange}
+      handleIdChange={() => {}}
+      handlePwChange={() => {}}
+      handleRememberChange={() => {}}
       handleLoginSubmit={() => alert("login ok")}
       {...args}
     />
