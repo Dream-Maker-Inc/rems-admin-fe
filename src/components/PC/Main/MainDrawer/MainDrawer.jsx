@@ -25,7 +25,13 @@ const CollapseAnimation = ({ isOpen, children }) => (
 
 // Drawer 배경
 const Surface = ({ children }) => (
-  <Stack minWidth={"260px"} height={"100%"} pb={"48px"} bgcolor={"#232629"}>
+  <Stack
+    minWidth={"260px"}
+    height={"100%"}
+    pb={"48px"}
+    bgcolor={"#232629"}
+    overflow={"scroll"}
+  >
     {children}
   </Stack>
 );

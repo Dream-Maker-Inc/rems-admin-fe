@@ -31,4 +31,5 @@ const Right = styled(Stack)`
 const ContentSection = styled(Stack)`
   background-color: #303539;
   height: 100%;
+  overflow: scroll;
 `;
