@@ -31,35 +31,38 @@ export const MainHeader = () => {
   const handleMicBadgeClick = () => alert("todo mic");
 
   return (
-    <AppBar position="static" elevation={1}>
-      <Toolbar sx={{ bgcolor: "#272c2f" }}>
-        <Inner>
-          <IconButton onClick={handleSideMenuToggle}>
-            {openSide ? <ArrowForwardRounded /> : <ArrowBackRounded />}
-          </IconButton>
+    <>
+      <AppBar elevation={1}>
+        <Toolbar sx={{ bgcolor: "#272c2f" }}>
+          <Inner>
+            <IconButton onClick={handleSideMenuToggle}>
+              {openSide ? <ArrowForwardRounded /> : <ArrowBackRounded />}
+            </IconButton>
 
-          <AppbarTitle>{title}</AppbarTitle>
+            <AppbarTitle>{title}</AppbarTitle>
 
-          <AppbarRight>
-            <IconSection>
-              <CustomBadge
-                onClick={handleNotificationBadgeClick}
-                badgeCount={notificationCount}
-                icon={<NotificationsActiveRounded />}
-              />
+            <AppbarRight>
+              <IconSection>
+                <CustomBadge
+                  onClick={handleNotificationBadgeClick}
+                  badgeCount={notificationCount}
+                  icon={<NotificationsActiveRounded />}
+                />
 
-              <CustomBadge
-                onClick={handleMicBadgeClick}
-                badgeCount={micCount}
-                icon={<MicRounded />}
-              />
-            </IconSection>
+                <CustomBadge
+                  onClick={handleMicBadgeClick}
+                  badgeCount={micCount}
+                  icon={<MicRounded />}
+                />
+              </IconSection>
 
-            <Typography sx={{ opacity: 0.8 }}>{date}</Typography>
-          </AppbarRight>
-        </Inner>
-      </Toolbar>
-    </AppBar>
+              <Typography sx={{ opacity: 0.8 }}>{date}</Typography>
+            </AppbarRight>
+          </Inner>
+        </Toolbar>
+      </AppBar>
+      <Toolbar />
+    </>
   );
 };
 

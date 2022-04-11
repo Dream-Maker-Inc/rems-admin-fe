@@ -1,0 +1,1 @@
+export { UsingTermView } from "./UsingTermView";

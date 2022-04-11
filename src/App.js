@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@mui/material/styles";
-import { GroupSelectView } from "./components/PC/GroupSelect/GroupSelectView";
+import { UsingTermView } from "./components/Mobile/UsingTerm/UsingTermView/UsingTermView";
 import { laptopTheme, mobileTheme } from "./themes/CustomThemes";
 import { useCustomMediaQuery } from "./themes/UseCustomMediaQuery";
 
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <ThemeProvider theme={isTablet ? mobileTheme : laptopTheme}>
-      <GroupSelectView />
+      <UsingTermView />
     </ThemeProvider>
   );
 }
