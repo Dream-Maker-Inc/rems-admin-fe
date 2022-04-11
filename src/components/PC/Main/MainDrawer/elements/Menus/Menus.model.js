@@ -14,6 +14,11 @@ export const MenusModel = [
       {
         id: "code-management",
         title: "코드 관리",
+        children: [
+          { id: "system-management1", title: "시스템 관리1" },
+          { id: "system-management2", title: "시스템 관리2" },
+          { id: "system-management3", title: "시스템 관리3" },
+        ],
       },
       {
         id: "app-management",

@@ -4,9 +4,25 @@ import { TreeItem, TreeView } from "@mui/lab";
 import { Stack, Typography } from "@mui/material";
 import { MenusModel } from "./Menus.model";
 
+const Depth2PaddingLeft = 48;
+const SubDepthPaddingLeft = 24;
+
 export const Menus = () => {
   const menuData = MenusModel;
   const handleMenuClick = (title) => alert(`title: ${title}`);
+
+  const renderTree = (model, paddingLeft) =>
+    model.children &&
+    model.children.map((it) => (
+      <StyledTreeItem
+        key={it.id}
+        nodeId={it.id}
+        label={it.title}
+        paddingLeft={paddingLeft}
+      >
+        {renderTree(it, paddingLeft + SubDepthPaddingLeft)}
+      </StyledTreeItem>
+    ));
 
   return (
     <StyledTreeView
@@ -25,10 +41,7 @@ export const Menus = () => {
             />
           }
         >
-          {it.children &&
-            it.children.map((it) => (
-              <StyledTreeItem key={it.id} nodeId={it.id} label={it.title} />
-            ))}
+          {renderTree(it, Depth2PaddingLeft)}
         </StyledTreeHead>
       ))}
     </StyledTreeView>
@@ -57,7 +70,7 @@ const StyledTreeItem = styled(TreeItem)`
   background-color: #232629;
 
   & .MuiTreeItem-content {
-    padding-left: 48px !important;
+    padding-left: ${({ paddingLeft }) => `${paddingLeft}px !important`};
   }
 
   & .MuiTreeItem-label::before {
