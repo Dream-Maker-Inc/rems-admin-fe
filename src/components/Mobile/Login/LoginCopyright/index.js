@@ -1,0 +1,1 @@
+export { LoginCopyright } from "./LoginCopyright";
