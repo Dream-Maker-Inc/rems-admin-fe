@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { StepControlPopup } from ".";
+
+<Meta title={"Control/[Popup] 단계 제어 팝업"} component={StepControlPopup} />
+
+# StepControlPopup
+
+단계 제어 팝업
+
+export const Template = (args) => <StepControlPopup {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
