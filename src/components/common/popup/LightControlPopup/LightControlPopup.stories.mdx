@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { LightControlPopup } from ".";
+
+<Meta
+    title={"Control/[Popup] 점등-소등 제어 팝업"}
+    component={LightControlPopup}
+/>
+
+# LightControlPopup
+
+점등/소등 제어 팝업
+
+export const Template = (args) => <LightControlPopup {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
