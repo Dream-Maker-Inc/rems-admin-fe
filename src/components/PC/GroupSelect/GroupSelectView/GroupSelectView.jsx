@@ -58,7 +58,7 @@ const Root = styled(Stack)`
     height: 100%;
     padding: 24px;
     background-color: #303539;
-    overflow-y: scroll;
+    overflow-y: auto;
 `;
 
 const GridContainer = ({ children }) => (

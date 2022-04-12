@@ -31,9 +31,9 @@ const CollapseAnimation = ({ isOpen, children }) => (
 const Surface = styled(Stack)`
     min-width: 260px;
     height: 100%;
-    padding-bottom: 48px;
+    // padding-bottom: 48px;
     background-color: #232629;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     -ms-overflow-style: none;
     scrollbar-width: none;
