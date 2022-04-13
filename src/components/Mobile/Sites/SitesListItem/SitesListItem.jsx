@@ -1,14 +1,6 @@
 import { Button, Stack, Typography } from "@mui/material";
 
-export const SitesListItem = () => {
-    const model = {
-        title: "편백 경로당",
-        address: "서울",
-        createdAt: "2021.01.01",
-    };
-
-    const handleBtnClick = () => alert("ok");
-
+export const SitesListItem = ({ model, onClick }) => {
     return (
         <Root>
             <Stack component={"dl"}>
@@ -20,7 +12,7 @@ export const SitesListItem = () => {
                 </DescriptionContainer>
             </Stack>
 
-            <Button variant="contained" onClick={handleBtnClick}>
+            <Button variant="contained" onClick={onClick}>
                 선택
             </Button>
         </Root>
@@ -33,8 +25,9 @@ const Root = ({ children }) => (
         direction={"row"}
         justifyContent={"space-between"}
         alignItems={"center"}
-        bgcolor={"#fff"}
         p={"16px"}
+        bgcolor={"#fff"}
+        borderBottom={"1px solid #eee"}
     >
         {children}
     </Stack>

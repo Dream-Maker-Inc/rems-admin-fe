@@ -14,5 +14,18 @@ import { SitesListItem } from ".";
 export const Template = (args) => <SitesListItem {...args} />;
 
 <Canvas>
-    <Story name="Default">{Template.bind({})}</Story>
+    <Story
+        name="Default"
+        args={{
+            model: {
+                id: 1,
+                title: "편백 경로당",
+                address: "서울",
+                createdAt: "2021.01.01",
+            },
+            onClick: () => alert(`clicked ${1}`),
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
