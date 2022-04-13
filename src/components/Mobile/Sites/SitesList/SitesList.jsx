@@ -1,45 +1,59 @@
 import { Stack } from "@mui/material";
+import { useDetectScrollDirection } from "../../../../hooks/Scroll/UseDetectScrollDirection";
+import { MoveTopFab } from "../../../common/MoveTopFab/MoveTopFab";
 import { SitesListItem } from "../SitesListItem";
 
 export const SitesList = () => {
-    const models = [
-        {
-            id: 1,
-            title: "편백 경로당 1",
-            address: "서울",
-            createdAt: "2021.01.01",
-        },
-        {
-            id: 2,
-            title: "편백 경로당 2",
-            address: "서울",
-            createdAt: "2021.01.01",
-        },
-        {
-            id: 3,
-            title: "편백 경로당 3",
-            address: "서울",
-            createdAt: "2021.01.01",
-        },
-        {
-            id: 4,
-            title: "편백 경로당 4",
-            address: "서울",
-            createdAt: "2021.01.01",
-        },
-    ];
+    const models = generateMockSites();
+
+    const { isPossibleScrollTop, isDirectionTop, handleScrollChange } =
+        useDetectScrollDirection();
 
     const handleItemClick = (id) => alert(`clicked ${id}`);
+    const handleMoveTop = (e) => console.log(e.target.c);
 
     return (
-        <Stack width={"100%"} height={"100%"} overflow={"auto"}>
-            {models.map(({ id, ...model }) => (
-                <SitesListItem
-                    key={id}
-                    model={model}
-                    onClick={() => handleItemClick(id)}
-                />
-            ))}
-        </Stack>
+        <Root>
+            <ScrolableContainer onScroll={handleScrollChange}>
+                {models.map(({ id, ...model }) => (
+                    <SitesListItem
+                        key={id}
+                        model={model}
+                        onClick={() => handleItemClick(id)}
+                    />
+                ))}
+            </ScrolableContainer>
+
+            <MoveTopFab
+                visible={isPossibleScrollTop && isDirectionTop}
+                onClick={handleMoveTop}
+            />
+        </Root>
     );
 };
+
+// 가짜 데이터 목록 생성
+const generateMockSites = () =>
+    Array.from({ length: 10 }, (_, index) => ({
+        id: index,
+        title: `편백 경로당 ${index}`,
+        address: "서울",
+        createdAt: "2021.01.01",
+    }));
+
+const Root = ({ children }) => (
+    <Stack
+        position={"relative"}
+        width={"100%"}
+        height={"100%"}
+        overflow={"hidden"}
+    >
+        {children}
+    </Stack>
+);
+
+const ScrolableContainer = ({ onScroll, children }) => (
+    <Stack width={"100%"} height={"100%"} overflow={"auto"} onScroll={onScroll}>
+        {children}
+    </Stack>
+);
