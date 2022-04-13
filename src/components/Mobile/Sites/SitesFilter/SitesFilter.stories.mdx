@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SitesFilter } from ".";
+
+<Meta title={"Mobile/Sites/사이트 목록 필터"} component={SitesFilter} />
+
+# SitesFilter
+
+사이트 목록 필터
+
+export const Template = (args) => <SitesFilter {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
