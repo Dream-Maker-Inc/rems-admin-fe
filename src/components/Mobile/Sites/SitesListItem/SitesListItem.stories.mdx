@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SitesListItem } from ".";
+
+<Meta
+    title={"Mobile/Sites/사이트 목록-리스트 아이템"}
+    component={SitesListItem}
+/>
+
+# SitesListItem
+
+사이트 목록 리스트 아이템
+
+export const Template = (args) => <SitesListItem {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
