@@ -19,12 +19,14 @@ export const laptopPalette = {
 
 export const mobileColor = {
     primary: "#37656d",
+    primaryA200: "#5e838a",
     secondary: "#c5f7ff",
 };
 
 export const mobilePalette = {
     primary: {
         main: mobileColor.primary,
+        A200: mobileColor.primaryA200,
     },
     secondary: {
         main: mobileColor.secondary,

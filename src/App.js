@@ -1,14 +1,17 @@
 import { ThemeProvider } from "@mui/material/styles";
+import { MainTemplate } from "./components/Mobile/Main/MainTemplate";
+import { SitesView } from "./components/Mobile/Sites/SitesView";
 import { laptopTheme, mobileTheme } from "./themes/CustomThemes";
 import { useCustomMediaQuery } from "./themes/UseCustomMediaQuery";
-import { MainTemplate } from "./components/Mobile/Main/MainTemplate";
 
 function App() {
     const { isTablet } = useCustomMediaQuery();
 
     return (
         <ThemeProvider theme={isTablet ? mobileTheme : laptopTheme}>
-            <MainTemplate />
+            <MainTemplate>
+                <SitesView />
+            </MainTemplate>
         </ThemeProvider>
     );
 }

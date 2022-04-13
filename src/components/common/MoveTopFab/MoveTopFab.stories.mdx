@@ -1,0 +1,23 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { MoveTopFab } from ".";
+
+<Meta title={"Common/Scroll Top Fab"} component={MoveTopFab} />
+
+# MoveTopFab
+
+스크롤 꼭대기로 보내기 플로팅 액션 버튼
+
+export const Template = (args) => <MoveTopFab {...args} />;
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{
+            visible: true,
+            onClick: () => alert("ok"),
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
