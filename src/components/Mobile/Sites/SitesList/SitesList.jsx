@@ -1,34 +1,21 @@
-import { Stack } from "@mui/material";
-import { useDetectScrollDirection } from "../../../../hooks/Scroll/UseDetectScrollDirection";
-import { MoveTopFab } from "../../../common/MoveTopFab/MoveTopFab";
+import { ScrollContainerWithTopFab } from "../../../common/ScrollContainerWithTopFab/ScrollContainerWithTopFab";
 import { SitesListItem } from "../SitesListItem";
 
 export const SitesList = () => {
     const models = generateMockSites();
 
-    const { isPossibleScrollTop, isDirectionTop, handleScrollChange } =
-        useDetectScrollDirection();
-
     const handleItemClick = (id) => alert(`clicked ${id}`);
-    const handleMoveTop = (e) => console.log(e.target.c);
 
     return (
-        <Root>
-            <ScrollableContainer onScroll={handleScrollChange}>
-                {models.map(({ id, ...model }) => (
-                    <SitesListItem
-                        key={id}
-                        model={model}
-                        onClick={() => handleItemClick(id)}
-                    />
-                ))}
-            </ScrollableContainer>
-
-            <MoveTopFab
-                visible={isPossibleScrollTop && isDirectionTop}
-                onClick={handleMoveTop}
-            />
-        </Root>
+        <ScrollContainerWithTopFab>
+            {models.map(({ id, ...model }) => (
+                <SitesListItem
+                    key={id}
+                    model={model}
+                    onClick={() => handleItemClick(id)}
+                />
+            ))}
+        </ScrollContainerWithTopFab>
     );
 };
 
@@ -40,20 +27,3 @@ const generateMockSites = () =>
         address: "서울",
         createdAt: "2021.01.01",
     }));
-
-const Root = ({ children }) => (
-    <Stack
-        position={"relative"}
-        width={"100%"}
-        height={"100%"}
-        overflow={"hidden"}
-    >
-        {children}
-    </Stack>
-);
-
-const ScrollableContainer = ({ onScroll, children }) => (
-    <Stack width={"100%"} height={"100%"} overflow={"auto"} onScroll={onScroll}>
-        {children}
-    </Stack>
-);

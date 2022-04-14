@@ -1,10 +1,9 @@
 import styled from "@emotion/styled";
 import { Stack } from "@mui/material";
+import { ScrollContainerWithTopFab } from "../../../common/ScrollContainerWithTopFab/ScrollContainerWithTopFab";
 import { GearStateItem } from "../../common/GearStateItem/GearStateItem";
 import { SectionTemplate } from "../../common/SectionTemplate/Section.template";
 import { HeadInfo } from "../HeadInfo/HeadInfo";
-import { MoveTopFab } from "../../../common/MoveTopFab";
-import { useDetectScrollDirection } from "../../../../hooks/Scroll/UseDetectScrollDirection";
 
 export const DashboardView = () => {
     const models = [
@@ -105,52 +104,23 @@ export const DashboardView = () => {
         },
     ];
 
-    const { isPossibleScrollTop, isDirectionTop, handleScrollChange } =
-        useDetectScrollDirection();
-
     const renderGridData = (data) =>
         data.map((it) => <GearStateItem key={it.name} model={it} />);
 
     return (
-        <Root>
-            <ScrollableContainer onScroll={handleScrollChange}>
-                <HeadInfo />
+        <ScrollContainerWithTopFab>
+            <HeadInfo />
 
-                <Stack spacing={"16px"} py={"16px"}>
-                    {models.map(({ gearName, data }) => (
-                        <SectionTemplate key={gearName} title={gearName}>
-                            <GridContainer>
-                                {renderGridData(data)}
-                            </GridContainer>
-                        </SectionTemplate>
-                    ))}
-                </Stack>
-            </ScrollableContainer>
-
-            <MoveTopFab
-                visible={isPossibleScrollTop && isDirectionTop}
-                onClick={() => alert("ok")}
-            />
-        </Root>
+            <Stack spacing={"16px"} py={"16px"}>
+                {models.map(({ gearName, data }) => (
+                    <SectionTemplate key={gearName} title={gearName}>
+                        <GridContainer>{renderGridData(data)}</GridContainer>
+                    </SectionTemplate>
+                ))}
+            </Stack>
+        </ScrollContainerWithTopFab>
     );
 };
-
-const Root = ({ children }) => (
-    <Stack
-        position={"relative"}
-        width={"100%"}
-        height={"100%"}
-        overflow={"hidden"}
-    >
-        {children}
-    </Stack>
-);
-
-const ScrollableContainer = ({ onScroll, children }) => (
-    <Stack width={"100%"} height={"100%"} overflow={"auto"} onScroll={onScroll}>
-        {children}
-    </Stack>
-);
 
 const GridContainer = styled("div")`
     display: grid;
