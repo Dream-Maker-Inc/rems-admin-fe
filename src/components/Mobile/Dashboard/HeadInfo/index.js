@@ -1,0 +1,1 @@
+export { HeadInfo } from "./HeadInfo";

@@ -21,6 +21,7 @@ export const mobileColor = {
     primary: "#37656d",
     primaryA200: "#5e838a",
     secondary: "#c5f7ff",
+    third: "#355f37",
 };
 
 export const mobilePalette = {

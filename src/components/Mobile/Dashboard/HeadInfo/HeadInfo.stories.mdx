@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { HeadInfo } from ".";
+
+<Meta title={"Mobile/Dashboard/상단 정보"} component={HeadInfo} />
+
+# HeadInfo
+
+상단 정보
+
+export const Template = (args) => <HeadInfo {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
