@@ -6,7 +6,10 @@ import { mobileColor } from "../../../../themes/Color";
 
     const model = {
         name: "거실1",
-        state: true,
+        state: {
+            label: "가동",
+            isRun: true
+        },
         temperature: "26",
     };
 
@@ -43,9 +46,9 @@ const GearName = ({ name }) => (
         width={"100%"}
         alignItems={"center"}
         justifyContent={"center"}
-        padding={"12px"}
+        padding={"4px"}
     >
-        <Typography variant="h6" sx={{ opacity: 0.6 }}>
+        <Typography variant="h6" sx={{ opacity: 0.5 }}>
             {name}
         </Typography>
     </Stack>
@@ -58,7 +61,6 @@ const GearNameWithCheckbox = ({ name, checkboxModel }) => (
         width={"100%"}
         alignItems={"center"}
         justifyContent={"space-between"}
-        padding={"8px"}
     >
         <Checkbox
             value={checkboxModel.value}
@@ -66,7 +68,7 @@ const GearNameWithCheckbox = ({ name, checkboxModel }) => (
             sx={{ opacity: 0.8 }}
         />
 
-        <Typography variant="h6" sx={{ opacity: 0.6 }}>
+        <Typography variant="h6" sx={{ opacity: 0.5 }}>
             {name}
         </Typography>
 
@@ -75,8 +77,7 @@ const GearNameWithCheckbox = ({ name, checkboxModel }) => (
 );
 
 const StateSection = ({ state, temperature }) => {
-    const stateText = state ? "가동" : "중지";
-    const stateColor = state ? "#b12020" : "primary";
+    const stateColor = state.isRun ? "#b12020" : "primary";
 
     return (
         <Stack direction={"row"} width={"100%"} bgcolor={"#d7d7d7"}>
@@ -84,34 +85,38 @@ const StateSection = ({ state, temperature }) => {
                 width={"100%"}
                 justifyContent={"center"}
                 alignItems={"center"}
-                padding={"12px"}
+                padding={"8px"}
             >
                 <Typography fontWeight={500} color={stateColor}>
-                    {stateText}
+                    {state.label}
                 </Typography>
             </Stack>
 
-            <Divider
-                direction={"vertical"}
-                sx={{
-                    width: "1px",
-                    my: "6px",
-                    bgcolor: "#fff",
-                    opacity: 0.7,
-                }}
-            />
+            {temperature && (
+                <>
+                    <Divider
+                        direction={"vertical"}
+                        sx={{
+                            width: "1px",
+                            my: "6px",
+                            bgcolor: "#fff",
+                            opacity: 0.7,
+                        }}
+                    />
 
-            <Stack
-                width={"100%"}
-                justifyContent={"center"}
-                alignItems={"center"}
-                padding={"8px"}
-            >
-                <Typography
-                    fontWeight={500}
-                    color={mobileColor.third}
-                >{`${temperature}°C`}</Typography>
-            </Stack>
+                    <Stack
+                        width={"100%"}
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        padding={"8px"}
+                    >
+                        <Typography
+                            fontWeight={500}
+                            color={mobileColor.third}
+                        >{`${temperature}°C`}</Typography>
+                    </Stack>
+                </>
+            )}
         </Stack>
     );
 };

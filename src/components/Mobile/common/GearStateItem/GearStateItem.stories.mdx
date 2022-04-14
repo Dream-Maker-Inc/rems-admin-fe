@@ -19,7 +19,10 @@ export const Template = (args) => <GearStateItem {...args} />;
     args={{
         model: {
             name: "거실1",
-            state: false,
+            state: {
+                label: "가동",
+                isRun: true,
+            },
             temperature: "26",
         },
     }}
@@ -35,7 +38,10 @@ export const Template = (args) => <GearStateItem {...args} />;
     args={{
         model: {
             name: "거실1",
-            state: true,
+            state: {
+                label: "중지",
+                isRun: false,
+            },
             temperature: "26",
         },
         checkboxModel: {

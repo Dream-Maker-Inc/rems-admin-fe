@@ -43,7 +43,12 @@ export const HeadInfo = () => {
 };
 
 const Root = ({ children }) => (
-    <Stack width={"100%"} p={"24px"} bgcolor={"primary.A200"} spacing={"16px"}>
+    <Stack
+        width={"100%"}
+        p={"16px 20px"}
+        bgcolor={"primary.A200"}
+        spacing={"16px"}
+    >
         {children}
     </Stack>
 );
@@ -84,12 +89,15 @@ const CustomDivider = styled(Divider)`
 
 const DayInformation = ({ date, weather, dust, temperature }) => (
     <Stack color={"#fff"} alignItems={"center"} width={"100%"}>
-        <Typography sx={{ opacity: 0.8 }}>{date}</Typography>
+        <Typography variant="body2" sx={{ opacity: 0.8 }}>
+            {date}
+        </Typography>
+
         <Stack
             direction={"row"}
             width={"100%"}
             alignItems={"flex-end"}
-            justifyContent={"space-between"}
+            justifyContent={"space-around"}
         >
             <ContentsWithLabel
                 content={<Image src={weather.img} alt={weather.label} />}
@@ -107,7 +115,7 @@ const DayInformation = ({ date, weather, dust, temperature }) => (
                 content={
                     <Typography
                         variant="h6"
-                        py={"24px"}
+                        py={"16px"}
                     >{`${temperature.data}°C`}</Typography>
                 }
                 label={temperature.label}
@@ -119,11 +127,11 @@ const DayInformation = ({ date, weather, dust, temperature }) => (
 const ContentsWithLabel = ({ content, label }) => (
     <Stack alignItems={"center"}>
         {content}
-        <Typography>{label}</Typography>
+        <Typography sx={{ opacity: 0.8 }}>{label}</Typography>
     </Stack>
 );
 
-const Image = ({ src, alt, padding, maxWidth = "80px" }) => {
+const Image = ({ src, alt, padding, maxWidth = "60px" }) => {
     return (
         <Stack
             width={"100%"}
