@@ -14,7 +14,7 @@ export const SitesList = () => {
 
     return (
         <Root>
-            <ScrolableContainer onScroll={handleScrollChange}>
+            <ScrollableContainer onScroll={handleScrollChange}>
                 {models.map(({ id, ...model }) => (
                     <SitesListItem
                         key={id}
@@ -22,7 +22,7 @@ export const SitesList = () => {
                         onClick={() => handleItemClick(id)}
                     />
                 ))}
-            </ScrolableContainer>
+            </ScrollableContainer>
 
             <MoveTopFab
                 visible={isPossibleScrollTop && isDirectionTop}
@@ -52,7 +52,7 @@ const Root = ({ children }) => (
     </Stack>
 );
 
-const ScrolableContainer = ({ onScroll, children }) => (
+const ScrollableContainer = ({ onScroll, children }) => (
     <Stack width={"100%"} height={"100%"} overflow={"auto"} onScroll={onScroll}>
         {children}
     </Stack>
