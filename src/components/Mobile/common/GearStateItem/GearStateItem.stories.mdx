@@ -1,0 +1,48 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { GearStateItem } from ".";
+
+<Meta title={"Mobile/Common/기기 상태 정보 아이템"} component={GearStateItem} />
+
+# GearStateItem
+
+기기 상태 정보 아이템
+
+---
+
+export const Template = (args) => <GearStateItem {...args} />;
+
+### 체크박스 미포함 형태
+
+<Story
+    name="Default"
+    args={{
+        model: {
+            name: "거실1",
+            state: false,
+            temperature: "26",
+        },
+    }}
+    ㄴ
+>
+    {Template.bind({})}
+</Story>
+
+### 체크박스 포함 형태
+
+<Story
+    name="With CheckBox"
+    args={{
+        model: {
+            name: "거실1",
+            state: true,
+            temperature: "26",
+        },
+        checkboxModel: {
+            value: false,
+            onChange: (checked) => {},
+        },
+    }}
+>
+    {Template.bind({})}
+</Story>
