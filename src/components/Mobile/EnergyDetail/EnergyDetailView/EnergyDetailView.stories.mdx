@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { EnergyDetailView } from ".";
+
+<Meta
+    title={"Mobile/Energy-Detail/[Page] 에너지 상세 뷰"}
+    component={EnergyDetailView}
+/>
+
+# EnergyDetailView
+
+에너지 상세 뷰
+
+export const Template = (args) => <EnergyDetailView {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

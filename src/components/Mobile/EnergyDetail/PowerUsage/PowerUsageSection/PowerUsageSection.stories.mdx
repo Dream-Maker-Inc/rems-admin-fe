@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { PowerUsageSection } from ".";
+
+<Meta
+    title={"Mobile/Energy-Detail/전력 사용량 섹션"}
+    component={PowerUsageSection}
+/>
+
+# PowerUsageSection
+
+전력 사용량 섹션
+
+export const Template = (args) => <PowerUsageSection {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

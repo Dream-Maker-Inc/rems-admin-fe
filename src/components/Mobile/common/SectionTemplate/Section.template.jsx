@@ -1,9 +1,9 @@
 import { CircleOutlined } from "@mui/icons-material";
 import { Stack, Typography } from "@mui/material";
 
-export const SectionTemplate = ({ title, children }) => {
+export const SectionTemplate = ({ title, padding = "20px", children }) => {
     return (
-        <Stack width={"100%"} bgcolor={"#fff"} p={"20px"} spacing={"8px"}>
+        <Stack width={"100%"} bgcolor={"#fff"} p={padding} spacing={"8px"}>
             <Stack direction={"row"} spacing={"4px"} alignItems={"center"}>
                 <CircleOutlined
                     fontSize="small"
