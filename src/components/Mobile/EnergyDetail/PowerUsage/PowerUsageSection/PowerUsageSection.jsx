@@ -36,8 +36,8 @@ const Root = ({ children }) => (
 );
 
 const Title = ({ children }) => (
-    <Stack padding={"8px 20px"}>
-        <Typography color={"primary"} fontWeight={500}>
+    <Stack padding={"12px 20px"}>
+        <Typography color={"primary"} fontWeight={600}>
             {children}
         </Typography>
     </Stack>
