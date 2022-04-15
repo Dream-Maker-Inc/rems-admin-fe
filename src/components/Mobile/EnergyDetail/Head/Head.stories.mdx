@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { Head } from ".";
+
+<Meta title={"Mobile/Energy-detail/상단"} component={Head} />
+
+# Head
+
+상단
+
+export const Template = (args) => <Head {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
