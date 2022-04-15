@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { PowerUsageInfo } from ".";
+
+<Meta title={"Mobile/Energy-Detail/상세 정보"} component={PowerUsageInfo} />
+
+# PowerUsageInfo
+
+상세 정보
+
+export const Template = (args) => <PowerUsageInfo {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
