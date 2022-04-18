@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { NoticeItem } from ".";
+
+<Meta title={"Mobile/Notice/공지사항 아이템"} component={NoticeItem} />
+
+# NoticeItem
+
+공지사항 아이템
+
+export const Template = (args) => <NoticeItem {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
