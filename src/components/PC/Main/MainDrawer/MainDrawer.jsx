@@ -31,7 +31,6 @@ const CollapseAnimation = ({ isOpen, children }) => (
 const Surface = styled(Stack)`
     min-width: 260px;
     height: 100%;
-    // padding-bottom: 48px;
     background-color: #232629;
     overflow-y: auto;
 
@@ -52,9 +51,9 @@ const LogoSection = () => (
                 bgcolor: "#23272a",
             }}
         >
-            <Typography variant="h3" fontSize={"40px"} color={"primary"}>
-                REMS
-            </Typography>
+            <Stack>
+                <img src="/assets/images/logo_REMS_sidebar.png" alt="logo" />
+            </Stack>
         </Toolbar>
     </AppBar>
 );
