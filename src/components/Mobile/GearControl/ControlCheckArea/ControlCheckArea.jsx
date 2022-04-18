@@ -18,6 +18,7 @@ export const ControlCheckArea = () => {
                 <FormControlLabel
                     control={<Checkbox />}
                     label={<Typography>전체 선택</Typography>}
+                    sx={{ width: "fit-content" }}
                 />
             </AreaHead>
 
