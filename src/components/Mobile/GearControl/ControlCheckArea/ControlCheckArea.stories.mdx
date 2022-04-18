@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { ControlCheckArea } from ".";
+
+<Meta
+    title={"Mobile/Gear-Control/설비 체크 영역"}
+    component={ControlCheckArea}
+/>
+
+# ControlCheckArea
+
+설비 체크 영역
+
+export const Template = (args) => <ControlCheckArea {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
