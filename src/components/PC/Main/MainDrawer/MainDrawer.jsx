@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { AppBar, Collapse, Stack, Toolbar, Typography } from "@mui/material";
+import { AppBar, Collapse, Stack, Toolbar } from "@mui/material";
 import { DrawerProfile } from "./elements/DrawerProfile";
 import { Menus } from "./elements/Menus";
 
