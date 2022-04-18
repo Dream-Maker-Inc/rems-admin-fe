@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@mui/material/styles";
-import { GearControlView } from "./components/Mobile/GearControl/GearControlView";
 import { MainTemplate } from "./components/Mobile/Main/MainTemplate";
+import { NoticeView } from "./components/Mobile/Notice/NoticeView/NoticeView";
 import { laptopTheme, mobileTheme } from "./themes/CustomThemes";
 import { useCustomMediaQuery } from "./themes/UseCustomMediaQuery";
 
@@ -10,7 +10,7 @@ function App() {
     return (
         <ThemeProvider theme={isTablet ? mobileTheme : laptopTheme}>
             <MainTemplate>
-                <GearControlView />
+                <NoticeView />
             </MainTemplate>
         </ThemeProvider>
     );
