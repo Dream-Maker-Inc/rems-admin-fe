@@ -63,8 +63,8 @@ const GearNameWithCheckbox = ({ name, checkboxModel }) => (
         justifyContent={"space-between"}
     >
         <Checkbox
-            value={checkboxModel.value}
-            onChange={(e) => checkboxModel.onChange(e.target.value)}
+            checked={checkboxModel.value}
+            onChange={(_, checked) => checkboxModel.onChange(checked)}
             sx={{ opacity: 0.8 }}
         />
 

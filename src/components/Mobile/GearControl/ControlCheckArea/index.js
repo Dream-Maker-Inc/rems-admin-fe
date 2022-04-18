@@ -1,0 +1,1 @@
+export { ControlCheckArea } from "./ControlCheckArea";
