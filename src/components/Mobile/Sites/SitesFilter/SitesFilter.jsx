@@ -1,14 +1,6 @@
-import { SearchRounded } from "@mui/icons-material";
-import {
-    IconButton,
-    InputAdornment,
-    MenuItem,
-    Select,
-    Stack,
-    TextField,
-    Typography,
-} from "@mui/material";
+import { MenuItem, Select, Stack, Typography } from "@mui/material";
 import { useState } from "react";
+import { SearchBar } from "../../common/SearchBar";
 
 export const SitesFilter = () => {
     // group
@@ -19,6 +11,7 @@ export const SitesFilter = () => {
     // site
     const [keyword, setKeyword] = useState("");
     const handleKeywordChange = (v) => setKeyword(v);
+    const handleSubmit = () => alert("ok");
 
     return (
         <Root>
@@ -38,6 +31,8 @@ export const SitesFilter = () => {
                 <SearchBar
                     value={keyword}
                     onChange={(e) => handleKeywordChange(e.target.value)}
+                    placeholder={"사이트명"}
+                    onSubmit={handleSubmit}
                 />
             </FilterContainer>
         </Root>
@@ -81,28 +76,4 @@ const CustomSelector = ({ value, onChange, items }) => (
             </MenuItem>
         ))}
     </Select>
-);
-
-const SearchBar = ({ value, onChange }) => (
-    <TextField
-        fullWidth
-        variant={"outlined"}
-        size={"small"}
-        placeholder={"사이트명"}
-        InputProps={{
-            sx: {
-                bgcolor: "#fff",
-                paddingRight: 0,
-            },
-            endAdornment: (
-                <InputAdornment position={"end"}>
-                    <IconButton onClick={() => {}}>
-                        <SearchRounded />
-                    </IconButton>
-                </InputAdornment>
-            ),
-        }}
-        value={value}
-        onChange={onChange}
-    />
 );
