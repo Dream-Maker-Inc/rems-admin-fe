@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SearchBar } from ".";
+
+<Meta title={"Mobile/Common/검색 컴포넌트"} component={SearchBar} />
+
+# SearchBar
+
+검색 컴포넌트
+
+export const Template = (args) => <SearchBar {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
