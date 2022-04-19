@@ -26,6 +26,7 @@ const Root = styled(Stack)`
     background-color: #2f3539;
     align-items: center;
     justify-content: center;
+    overflow: auto;
 
     @media (max-height: 800px) {
         justify-content: flex-start;
