@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { NotificationTabLayout } from ".";
+
+<Meta
+    title={"Mobile/Notification/알림 탭 레이아웃"}
+    component={NotificationTabLayout}
+/>
+
+# NotificationTabLayout
+
+알림 탭 레이아웃
+
+export const Template = (args) => <NotificationTabLayout {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

@@ -11,7 +11,7 @@ export const NotificationItem = () => {
 
     const button = {
         label: "확인",
-        onClick: () => {},
+        onClick: () => alert("ok"),
     };
 
     return (
@@ -49,6 +49,7 @@ const Root = ({ children }) => (
         width={"100%"}
         spacing={"8px"}
         padding={"12px 16px"}
+        borderBottom={"1px solid #eee"}
     >
         {children}
     </Stack>
