@@ -1,7 +1,7 @@
 import { Stack, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
 import { NotificationItem } from "../NotificationItem/NotificationItem";
-import { ScrollContainerWithTopFab } from "../../../common/ScrollContainerWithTopFab";
+import { ScrollContainerWithTopFab } from "../../../../../common/ScrollContainerWithTopFab";
 
 export const NotificationTabLayout = () => {
     // tabs
