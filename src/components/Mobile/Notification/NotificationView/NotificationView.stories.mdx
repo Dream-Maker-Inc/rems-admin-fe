@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { NotificationView } from ".";
+
+<Meta
+    title={"Mobile/Notification/[Page] 알림 뷰"}
+    component={NotificationView}
+/>
+
+# NotificationView
+
+알림 뷰
+
+export const Template = (args) => <NotificationView {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

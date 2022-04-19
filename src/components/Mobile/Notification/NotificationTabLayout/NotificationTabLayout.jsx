@@ -6,16 +6,16 @@ import { ScrollContainerWithTopFab } from "../../../common/ScrollContainerWithTo
 export const NotificationTabLayout = () => {
     // tabs
     const tabItems = ["발생", "확인", "조치"];
-    const [tabIndex, setTabIndex] = useState(0);
-    const handleTabChange = (v) => setTabIndex(v);
+    const [tabValue, setTabValue] = useState(tabItems[0]);
+    const handleTabChange = (v) => setTabValue(v);
 
     return (
-        <Stack width={"100%"} height={"100%"}>
+        <Stack width={"100%"} height={"100%"} overflow={"hidden"}>
             <Tabs
-                value={tabIndex}
-                onChange={(_, v) => handleTabChange(v)}
-                centered
+                variant="fullWidth"
                 sx={{ bgcolor: "#eee" }}
+                value={tabValue}
+                onChange={(_, v) => handleTabChange(v)}
             >
                 {tabItems.map((it) => (
                     <Tab key={it} label={it} value={it} />
