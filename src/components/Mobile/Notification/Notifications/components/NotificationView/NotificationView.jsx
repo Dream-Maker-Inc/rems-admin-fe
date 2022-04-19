@@ -1,6 +1,6 @@
 import { Stack } from "@mui/material";
-import { Head } from "../../Head";
-import { NotificationTabLayout } from "../../NotificationTabLayout";
+import { Head } from "../Head";
+import { NotificationTabLayout } from "../NotificationTabLayout/NotificationTabLayout";
 
 export const NotificationView = () => {
     return (
