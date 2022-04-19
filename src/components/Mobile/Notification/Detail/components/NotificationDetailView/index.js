@@ -1,0 +1,1 @@
+export { NotificationDetailView } from "./NotificationDetailView";

@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { DetailView } from ".";
+
+<Meta
+    title={"Mobile/Notification/Detail/알람 조치 아이템"}
+    component={DetailView}
+/>
+
+# DetailView
+
+알람 조치 아이템
+
+export const Template = (args) => <DetailView {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
