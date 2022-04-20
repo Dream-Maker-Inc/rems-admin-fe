@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { NotificationSetting } from ".";
+
+<Meta title={"Mobile/Setting/알림 수신 여부"} component={NotificationSetting} />
+
+# NotificationSetting
+
+알림 수신 여부
+
+export const Template = (args) => <NotificationSetting {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

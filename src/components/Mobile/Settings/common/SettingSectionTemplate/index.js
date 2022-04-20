@@ -1,0 +1,1 @@
+export { SettingSectionTemplate } from "./SettingSectionTemplate";
