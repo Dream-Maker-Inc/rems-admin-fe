@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { GroupSitesSetting } from ".";
+
+<Meta
+    title={"Mobile/Setting/그룹 및 사이트 설정"}
+    component={GroupSitesSetting}
+/>
+
+# GroupSitesSetting
+
+그룹 및 사이트 설정
+
+export const Template = (args) => <GroupSitesSetting {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
