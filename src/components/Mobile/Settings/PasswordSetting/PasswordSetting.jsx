@@ -1,6 +1,8 @@
-import { Stack, TextField, Typography } from "@mui/material";
+import { Stack, TextField } from "@mui/material";
 import { useState } from "react";
+import { RowLeftTypo } from "../common/RowLeftTypo";
 import { SettingSectionTemplate } from "../common/SettingSectionTemplate/SettingSectionTemplate";
+import { Row } from "../common/Row/Row";
 
 export const PasswordSetting = () => {
     const [prevPw, setPrevPw] = useState("");
@@ -47,23 +49,6 @@ export const PasswordSetting = () => {
         </SettingSectionTemplate>
     );
 };
-
-const Row = ({ children }) => (
-    <Stack
-        direction={"row"}
-        whiteSpace={"nowrap"}
-        alignItems={"center"}
-        spacing={"16px"}
-    >
-        {children}
-    </Stack>
-);
-
-const RowLeftTypo = ({ children }) => (
-    <Typography width={"200px"} textAlign={"end"}>
-        {children}
-    </Typography>
-);
 
 const RowTextField = ({ placeholder, value, onChange }) => (
     <TextField

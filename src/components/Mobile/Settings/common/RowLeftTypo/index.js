@@ -1,0 +1,1 @@
+export { RowLeftTypo } from "./RowLeftTypo";

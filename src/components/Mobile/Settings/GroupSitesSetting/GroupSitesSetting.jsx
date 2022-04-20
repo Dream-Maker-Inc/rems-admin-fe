@@ -1,5 +1,7 @@
-import { MenuItem, Select, Stack, Typography } from "@mui/material";
+import { MenuItem, Select, Stack } from "@mui/material";
 import { useState } from "react";
+import { Row } from "../common/Row/Row";
+import { RowLeftTypo } from "../common/RowLeftTypo";
 import { SettingSectionTemplate } from "../common/SettingSectionTemplate/SettingSectionTemplate";
 
 export const GroupSitesSetting = () => {
@@ -37,23 +39,6 @@ export const GroupSitesSetting = () => {
         </SettingSectionTemplate>
     );
 };
-
-const Row = ({ children }) => (
-    <Stack
-        direction={"row"}
-        whiteSpace={"nowrap"}
-        alignItems={"center"}
-        spacing={"16px"}
-    >
-        {children}
-    </Stack>
-);
-
-const RowLeftTypo = ({ children }) => (
-    <Typography width={"200px"} textAlign={"end"}>
-        {children}
-    </Typography>
-);
 
 const CustomSelector = ({ value, onChange, items }) => (
     <Select

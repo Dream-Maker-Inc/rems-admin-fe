@@ -1,12 +1,7 @@
-import {
-    FormControlLabel,
-    Radio,
-    RadioGroup,
-    Stack,
-    Typography,
-} from "@mui/material";
+import { FormControlLabel, Radio, RadioGroup, Stack } from "@mui/material";
 import { useState } from "react";
 import { SettingSectionTemplate } from "../common/SettingSectionTemplate/SettingSectionTemplate";
+import { RowLeftTypo } from "../common/RowLeftTypo/RowLeftTypo";
 
 export const NotificationSetting = () => {
     const radioItems = [
@@ -31,12 +26,13 @@ export const NotificationSetting = () => {
                 alignItems={"center"}
                 spacing={"16px"}
             >
-                <Typography>설비 알람</Typography>
+                <RowLeftTypo>설비 알람</RowLeftTypo>
 
                 <RadioGroup
                     row
                     value={radioValue}
                     onChange={(e) => handleRadioChange(e.target.value)}
+                    sx={{ width: "100%" }}
                 >
                     {radioItems.map((it) => (
                         <FormControlLabel

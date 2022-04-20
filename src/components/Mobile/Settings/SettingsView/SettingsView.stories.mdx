@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SettingsView } from ".";
+
+<Meta title={"Mobile/Setting/[Page] 설정 뷰"} component={SettingsView} />
+
+# SettingsView
+
+설정 뷰
+
+export const Template = (args) => <SettingsView {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
