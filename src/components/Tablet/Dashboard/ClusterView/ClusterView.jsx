@@ -93,6 +93,7 @@ const Root = ({ children }) => (
     <Stack
         bgcolor={"#fff"}
         width={"100%"}
+        height={"100%"}
         padding={"36px 24px"}
         spacing={"36px"}
         borderRadius={"4px"}

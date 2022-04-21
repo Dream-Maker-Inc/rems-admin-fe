@@ -7,7 +7,7 @@ import {
     Typography,
 } from "@mui/material";
 import { ScreenType } from "../../../../themes/Limit";
-import { GearStateItem } from "../../common/GearStateItem";
+import { GearStateItem } from "../../../common/GearStateItem";
 
 export const ControlCheckArea = () => {
     const handleSubmit = () => alert("ok");

@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@mui/material/styles";
-import { MainTemplate } from "./components/Mobile/Main/MainTemplate";
-import { SettingsView } from "./components/Mobile/Settings/SettingsView";
+import { DashboardView } from "./components/Tablet/Dashboard/DashboardView/DashboardView";
+import { MainTemplate } from "./components/Tablet/Main/MainTemplate";
 import { laptopTheme, mobileTheme } from "./themes/CustomThemes";
 import { useCustomMediaQuery } from "./themes/UseCustomMediaQuery";
 
@@ -10,7 +10,7 @@ function App() {
     return (
         <ThemeProvider theme={isTablet ? mobileTheme : laptopTheme}>
             <MainTemplate>
-                <SettingsView />
+                <DashboardView />
             </MainTemplate>
         </ThemeProvider>
     );

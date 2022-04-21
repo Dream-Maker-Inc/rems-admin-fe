@@ -7,14 +7,15 @@ export const MainTemplate = ({ children }) => {
         <Root>
             <Stack width={"100%"} height={"100%"} bgcolor={"primary.main"}>
                 <MainHeader />
-                <Stack overflow={"auto"}>{children}</Stack>
+                <Stack overflow={"auto"} height={"100%"}>
+                    {children}
+                </Stack>
             </Stack>
         </Root>
     );
 };
 
 const Root = styled(Stack)`
-    flex-direction: row;
     width: 100%;
     height: 100%;
 `;
