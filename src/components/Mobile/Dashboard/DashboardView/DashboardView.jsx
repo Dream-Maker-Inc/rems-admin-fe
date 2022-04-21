@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Stack } from "@mui/material";
 import { ScrollContainerWithTopFab } from "../../../common/ScrollContainerWithTopFab/ScrollContainerWithTopFab";
-import { GearStateItem } from "../../common/GearStateItem/GearStateItem";
+import { GearStateItem } from "../../../common/GearStateItem";
 import { SectionTemplate } from "../../common/SectionTemplate/Section.template";
 import { HeadInfo } from "../HeadInfo/HeadInfo";
 

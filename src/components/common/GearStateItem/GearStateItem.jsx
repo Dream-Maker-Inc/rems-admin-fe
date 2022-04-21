@@ -1,5 +1,5 @@
 import { Card, Checkbox, Divider, Stack, Typography } from "@mui/material";
-import { mobileColor } from "../../../../themes/Color";
+import { mobileColor } from "../../../themes/Color";
 
 /*    
     # model types 
@@ -77,20 +77,22 @@ const GearNameWithCheckbox = ({ name, checkboxModel }) => (
 );
 
 const StateSection = ({ state, temperature }) => {
-    const stateColor = state.isRun ? "#b12020" : "primary";
+    const stateColor = state?.isRun ? "#b12020" : "primary";
 
     return (
         <Stack direction={"row"} width={"100%"} bgcolor={"#d7d7d7"}>
-            <Stack
-                width={"100%"}
-                justifyContent={"center"}
-                alignItems={"center"}
-                padding={"8px"}
-            >
-                <Typography fontWeight={500} color={stateColor}>
-                    {state.label}
-                </Typography>
-            </Stack>
+            {state && (
+                <Stack
+                    width={"100%"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    padding={"8px"}
+                >
+                    <Typography fontWeight={500} color={stateColor}>
+                        {state.label}
+                    </Typography>
+                </Stack>
+            )}
 
             {temperature && (
                 <>

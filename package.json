@@ -66,6 +66,7 @@
         "highcharts": "^10.0.0",
         "highcharts-react-official": "^3.1.0",
         "storybook-addon-multi-theme": "^0.0.8",
-        "webpack": "^5.71.0"
+        "webpack": "^5.71.0",
+        "swiper": "^8.1.1"
     }
 }

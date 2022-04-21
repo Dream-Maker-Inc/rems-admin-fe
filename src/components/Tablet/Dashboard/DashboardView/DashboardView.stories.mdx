@@ -1,0 +1,21 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { DashboardView } from ".";
+
+<Meta title={"Tablet/Dashboard/[Page] 대시보드 뷰"} component={DashboardView} />
+
+# DashboardView
+
+대시보드 뷰
+
+스토리북에서는 스크롤 이벤트 확인을 위해 height를 600px로 고정한 상태
+
+export const Template = (args) => (
+    <div style={{ width: "100%", height: "600px" }}>
+        <DashboardView {...args} />
+    </div>
+);
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
