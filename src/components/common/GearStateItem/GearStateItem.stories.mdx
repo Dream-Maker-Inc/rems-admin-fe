@@ -2,7 +2,7 @@ import { Meta, Story } from "@storybook/addon-docs";
 
 import { GearStateItem } from ".";
 
-<Meta title={"Mobile/Common/기기 상태 정보 아이템"} component={GearStateItem} />
+<Meta title={"Common/기기 상태 정보 아이템"} component={GearStateItem} />
 
 # GearStateItem
 
@@ -47,6 +47,20 @@ export const Template = (args) => <GearStateItem {...args} />;
         checkboxModel: {
             value: false,
             onChange: (checked) => {},
+        },
+    }}
+>
+    {Template.bind({})}
+</Story>
+
+### 온도만 표시
+
+<Story
+    name="Only Temperature"
+    args={{
+        model: {
+            name: "거실1",
+            temperature: "26",
         },
     }}
 >
