@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { ArrowBackRounded } from "@mui/icons-material";
 import {
     AppBar,
@@ -10,11 +11,11 @@ import {
 
 export const PopupTemplate = ({ open, onClose, title, children }) => {
     return (
-        <Dialog fullWidth open={open} onClose={onClose}>
-            <Stack>
+        <StyledDialog fullWidth open={open} onClose={onClose}>
+            <Stack height={"100%"}>
                 <AppBar position="static" elevation={0}>
                     <Toolbar variant="dense">
-                        <IconButton edge={"start"}>
+                        <IconButton edge={"start"} onClick={onClose}>
                             <ArrowBackRounded htmlColor="#fff" />
                         </IconButton>
 
@@ -33,6 +34,12 @@ export const PopupTemplate = ({ open, onClose, title, children }) => {
 
                 {children}
             </Stack>
-        </Dialog>
+        </StyledDialog>
     );
 };
+
+const StyledDialog = styled(Dialog)`
+    & .MuiPaper-root[role="dialog"] {
+        height: 100%;
+    }
+`;

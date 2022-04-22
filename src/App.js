@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTemplate } from "./components/Mobile/Main/MainTemplate";
-import { SettingsView } from "./components/Mobile/Settings/SettingsView/SettingsView";
+import { NotificationListPopup } from "./components/Tablet/Notification/NotificationListPopup/NotificationListPopup";
 import { laptopTheme, mobileTheme } from "./themes/CustomThemes";
 import { useCustomMediaQuery } from "./themes/UseCustomMediaQuery";
 
@@ -10,7 +10,7 @@ function App() {
     return (
         <ThemeProvider theme={isTablet ? mobileTheme : laptopTheme}>
             <MainTemplate>
-                <SettingsView />
+                <NotificationListPopup />
             </MainTemplate>
         </ThemeProvider>
     );

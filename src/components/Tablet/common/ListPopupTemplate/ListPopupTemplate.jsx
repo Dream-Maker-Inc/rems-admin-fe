@@ -35,7 +35,7 @@ export const ListPopupTemplate = ({
 }) => {
     return (
         <PopupTemplate open={open} onClose={onClose} title={title}>
-            <Stack>
+            <Stack height={"100%"} overflow={"hidden"}>
                 <Stack direction={"row"} bgcolor={"#eee"}>
                     <IndexHeaderCell>
                         <HeaderTypo>번호</HeaderTypo>
