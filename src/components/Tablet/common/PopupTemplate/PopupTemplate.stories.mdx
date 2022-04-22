@@ -1,0 +1,24 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { PopupTemplate } from ".";
+
+<Meta title={"Tablet/Common/팝업 템플릿"} component={PopupTemplate} />
+
+# PopupTemplate
+
+팝업 템플릿
+
+export const Template = (args) => <PopupTemplate {...args} />;
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{
+            open: true,
+            title: "타이틀",
+            children: <div>contents</div>,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
