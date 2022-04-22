@@ -1,0 +1,34 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { ListPopupTemplate } from ".";
+
+<Meta
+    title={"Tablet/Common/리스트 팝업 템플릿"}
+    component={ListPopupTemplate}
+/>
+
+# ListPopupTemplate
+
+리스트 팝업 템플릿
+
+export const Template = (args) => <ListPopupTemplate {...args} />;
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{
+            open: true,
+            title: "타이틀",
+            items: [
+                {
+                    id: 1,
+                    title: "거실1/전열/교환기/에러발생",
+                    createdAt: "2021.01.01",
+                },
+            ],
+            handleItemShow: (id) => alert(id),
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
