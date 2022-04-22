@@ -125,7 +125,7 @@ const DateItemCell = styled(Stack)`
 `;
 
 const HeaderTypo = ({ children }) => (
-    <Typography variant="subtitle1" fontWeight={500}>
+    <Typography variant="subtitle1" fontWeight={600}>
         {children}
     </Typography>
 );
