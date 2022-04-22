@@ -75,7 +75,7 @@ export const ListPopupTemplate = ({
 const st = {
     indexCell: css`
         width: 140px;
-        height: 24px;
+        height: 28px;
         margin: 8px 0;
         padding: 0 8px;
         align-items: center;
@@ -83,14 +83,14 @@ const st = {
     `,
     titleCell: css`
         width: 100%;
-        height: 24px;
+        height: 28px;
         margin: 8px 0;
         padding: 0 16px;
         justify-content: center;
     `,
     dateCell: css`
         width: 340px;
-        height: 24px;
+        height: 28px;
         margin: 8px 0;
         padding: 0 16px;
         justify-content: center;

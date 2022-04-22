@@ -1,0 +1,46 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { DetailPopupTemplate } from ".";
+
+<Meta
+    title={"Tablet/Common/상세 팝업 템플릿"}
+    component={DetailPopupTemplate}
+/>
+
+# DetailPopupTemplate
+
+상세 팝업 템플릿
+
+export const Template = (args) => <DetailPopupTemplate {...args} />;
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{
+            open: true,
+            title: "알람 상세",
+            model: {
+                firstRow: {
+                    label: "설비",
+                    value: "[에어컨] 거실1",
+                },
+                secondRow: {
+                    first: {
+                        label: "위치",
+                        value: "거실1",
+                    },
+                    second: {
+                        label: "알람일시",
+                        value: "2021.01.01 09:00:00",
+                    },
+                },
+                textarea: {
+                    label: "알람 내용",
+                    value: "가동 에러",
+                },
+            },
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

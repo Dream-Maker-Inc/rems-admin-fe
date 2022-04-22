@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { NoticeDetailPopup } from ".";
+
+<Meta
+    title={"Tablet/Notice/[Popup] 공지 상세 팝업"}
+    component={NoticeDetailPopup}
+/>
+
+# NoticeDetailPopup
+
+공지 상세 팝업
+
+export const Template = (args) => <NoticeDetailPopup {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
