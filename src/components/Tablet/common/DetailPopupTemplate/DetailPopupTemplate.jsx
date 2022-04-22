@@ -37,7 +37,9 @@ export const DetailPopupTemplate = ({ open, onClose, title, model }) => {
             <Root>
                 <Stack spacing={"12px"}>
                     <TitleInputRow>
-                        <Typography>{firstRow.label}</Typography>
+                        <Typography minWidth={"44px"} textAlign={"end"}>
+                            {firstRow.label}
+                        </Typography>
                         <ReadOnlyInput value={firstRow.value} />
                     </TitleInputRow>
 
@@ -47,7 +49,9 @@ export const DetailPopupTemplate = ({ open, onClose, title, model }) => {
                         spacing={"24px"}
                     >
                         <TitleInputRow>
-                            <Typography>{secondRow.first.label}</Typography>
+                            <Typography minWidth={"44px"} textAlign={"end"}>
+                                {secondRow.first.label}
+                            </Typography>
                             <ReadOnlyInput value={secondRow.first.value} />
                         </TitleInputRow>
                         <TitleInputRow>
@@ -100,6 +104,14 @@ const TextArea = ({ children }) => (
         padding={"12px"}
         minHeight={"180px"}
     >
-        <Typography variant="body2">{children}</Typography>
+        <Typography
+            variant="body2"
+            whiteSpace={"pre-wrap"}
+            display={"flex"}
+            flexDirection={"column"}
+            gap={"4px"}
+        >
+            {children}
+        </Typography>
     </Stack>
 );
