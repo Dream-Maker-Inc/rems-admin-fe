@@ -1,0 +1,1 @@
+export { DetailPopupTemplate } from "./DetailPopupTemplate";

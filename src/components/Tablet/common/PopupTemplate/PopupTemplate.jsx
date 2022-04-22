@@ -9,9 +9,15 @@ import {
     Typography,
 } from "@mui/material";
 
-export const PopupTemplate = ({ open, onClose, title, children }) => {
+export const PopupTemplate = ({
+    open,
+    onClose,
+    title,
+    children,
+    height = "100%",
+}) => {
     return (
-        <StyledDialog fullWidth open={open} onClose={onClose}>
+        <StyledDialog fullWidth open={open} onClose={onClose} height={height}>
             <Stack height={"100%"}>
                 <AppBar position="static" elevation={0}>
                     <Toolbar variant="dense">
@@ -40,6 +46,6 @@ export const PopupTemplate = ({ open, onClose, title, children }) => {
 
 const StyledDialog = styled(Dialog)`
     & .MuiPaper-root[role="dialog"] {
-        height: 100%;
+        height: ${({ height }) => height};
     }
 `;
