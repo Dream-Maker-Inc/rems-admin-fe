@@ -1,0 +1,27 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { NotificationDetailPopup } from ".";
+
+<Meta
+    title={"PC/Notification/Detail/[Popup] 알람 상세 팝업"}
+    component={NotificationDetailPopup}
+/>
+
+# NotificationDetailPopup
+
+알람 상세 팝업
+
+export const Template = (args) => <NotificationDetailPopup {...args} />;
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{
+            open: true,
+            title: "title",
+            children: "콘텐츠 크기에 따라 height 변동",
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

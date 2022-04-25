@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTemplate } from "./components/Mobile/Main/MainTemplate";
-import { NotificationDetailPopup } from "./components/Tablet/Notification/NotificationDetailPopup/NotificationDetailPopup";
+import { NotificationDetailPopup } from "./components/PC/Notification/Detail";
 import { laptopTheme, mobileTheme } from "./themes/CustomThemes";
 import { useCustomMediaQuery } from "./themes/UseCustomMediaQuery";
 

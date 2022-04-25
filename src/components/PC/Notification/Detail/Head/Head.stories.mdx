@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { Head } from ".";
+
+<Meta title={"PC/Notification/Detail/Head"} component={Head} />
+
+# Head
+
+Head
+
+export const Template = (args) => <Head {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
