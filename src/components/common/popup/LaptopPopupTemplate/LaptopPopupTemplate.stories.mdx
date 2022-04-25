@@ -1,0 +1,27 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { LaptopPopupTemplate } from ".";
+
+<Meta
+    title={"Control/[Popup] Laptop 팝업 템플릿"}
+    component={LaptopPopupTemplate}
+/>
+
+# LaptopPopupTemplate
+
+Laptop 팝업 템플릿
+
+export const Template = (args) => <LaptopPopupTemplate {...args} />;
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{
+            open: true,
+            title: "title",
+            children: "콘텐츠 크기에 따라 height 변동",
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

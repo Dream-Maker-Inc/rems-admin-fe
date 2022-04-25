@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { History } from ".";
+
+<Meta title={"PC/Notification/Detail/History"} component={History} />
+
+# History
+
+History
+
+export const Template = (args) => <History {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
