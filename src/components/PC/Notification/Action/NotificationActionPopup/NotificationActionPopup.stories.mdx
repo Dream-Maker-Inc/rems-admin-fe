@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { NotificationActionPopup } from ".";
+
+<Meta
+    title={"PC/Notification/Action/[Popup] 알람 처리 팝업"}
+    component={NotificationActionPopup}
+/>
+
+# NotificationActionPopup
+
+알람 처리 팝업
+
+export const Template = (args) => <NotificationActionPopup {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

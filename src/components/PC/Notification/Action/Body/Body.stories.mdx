@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { Body } from ".";
+
+<Meta title={"PC/Notification/Action/Body"} component={Body} />
+
+# Body
+
+Body
+
+export const Template = (args) => <Body {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
