@@ -1,0 +1,17 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SiteInfo } from ".";
+
+<Meta title={"PC/Gear/Detail/사이트 정보"} component={SiteInfo} />
+
+# SiteInfo
+
+사이트 정보
+
+export const Template = (args) => <SiteInfo {...args} />;
+
+<Canvas>
+    <Story name="Default" args={{ title: "title", children: "contents" }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>

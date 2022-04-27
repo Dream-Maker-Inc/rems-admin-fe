@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SlidingDrawer } from ".";
+
+<Meta title={"PC/Gear/Detail/상세 슬라이딩 페이지"} component={SlidingDrawer} />
+
+# SlidingDrawer
+
+상세 슬라이딩 페이지
+
+export const Template = (args) => <SlidingDrawer {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
