@@ -1,6 +1,11 @@
 import { Meta, Story } from "@storybook/addon-docs";
 
 import { SlidingDrawer } from ".";
+import { SiteInfo } from "../SiteInfo";
+import { GearList } from "../GearList";
+import { GearSetting } from "../GearSetting";
+import { SiteSetting } from "../SiteSetting";
+import { MeasureSetting } from "../MeasureSetting";
 
 <Meta title={"PC/Gear/Detail/상세 슬라이딩 페이지"} component={SlidingDrawer} />
 
@@ -11,5 +16,43 @@ import { SlidingDrawer } from ".";
 export const Template = (args) => <SlidingDrawer {...args} />;
 
 <Canvas>
-    <Story name="Default">{Template.bind({})}</Story>
+    <Story
+        name="Default"
+        args={{ title: "Sliding Page", children: "contents" }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="- 사이트 정보"
+        args={{ title: "사이트 정보", children: <SiteInfo /> }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="- 장비 목록"
+        args={{
+            title: "장비 목록",
+            children: <GearList />,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="- 설비 설정"
+        args={{ title: "설비 설정", children: <GearSetting /> }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="- 사이트 할당"
+        args={{ title: "사이트 할당", children: <SiteSetting /> }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="- 계측기명 설정"
+        args={{ title: "계측기명 설정", children: <MeasureSetting /> }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
