@@ -93,7 +93,7 @@ const TH = ({ colSpan, children }) => (
         component={"th"}
         colSpan={colSpan}
         width={"140px"}
-        sx={{ bgcolor: "#3f464c", border: "1px solid #eeeeee33" }}
+        sx={{ bgcolor: "#3f464c", border: "1px solid #eeeeee11" }}
     >
         <Typography textAlign={"end"}>{children}</Typography>
     </TableCell>
@@ -105,7 +105,7 @@ const TD = ({ colSpan, children }) => (
         colSpan={colSpan}
         sx={{
             bgcolor: "#3a3f43",
-            border: "1px solid #eeeeee33",
+            border: "1px solid #eeeeee11",
         }}
     >
         <Typography>{children}</Typography>
