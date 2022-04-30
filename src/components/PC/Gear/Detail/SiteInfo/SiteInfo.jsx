@@ -34,15 +34,21 @@ export const SiteInfo = () => {
                     <TableBody>
                         <TableRow>
                             <TH colSpan={1}>사이트명</TH>
-                            <TD colSpan={3}>{siteName}</TD>
+                            <TD colSpan={3}>
+                                <Typography>{siteName}</Typography>
+                            </TD>
                         </TableRow>
 
                         <TableRow>
                             <TH>GW ID</TH>
-                            <TD>{gwID}</TD>
+                            <TD>
+                                <Typography>{gwID}</Typography>
+                            </TD>
 
                             <TH>GW MAC</TH>
-                            <TD>{gwMac}</TD>
+                            <TD>
+                                <Typography>{gwMac}</Typography>
+                            </TD>
                         </TableRow>
 
                         <TableRow>
@@ -108,6 +114,6 @@ const TD = ({ colSpan, children }) => (
             border: "1px solid #eeeeee11",
         }}
     >
-        <Typography>{children}</Typography>
+        {children}
     </TableCell>
 );

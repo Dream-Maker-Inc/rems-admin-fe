@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SiteSetting } from ".";
+
+<Meta title={"PC/Gear/Detail/사이트 할당"} component={SiteSetting} />
+
+# SiteSetting
+
+사이트 할당
+
+export const Template = (args) => <SiteSetting {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
