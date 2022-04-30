@@ -1,8 +1,12 @@
 import { Stack, Typography } from "@mui/material";
+import { ActionButtons } from "../ActionButtons/ActionButtons";
 import { SectionTemplate } from "../SectionTemplate";
 
 export const GearList = () => {
     const models = getGearModels();
+
+    const handleSave = () => alert("save");
+    const handleCancel = () => alert("cancel");
 
     const headers = [
         "장비 MAC",
@@ -44,6 +48,10 @@ export const GearList = () => {
                     ))}
                 </TBody>
             </Table>
+
+            <Stack alignItems={"flex-end"}>
+                <ActionButtons onSave={handleSave} onCancel={handleCancel} />
+            </Stack>
         </SectionTemplate>
     );
 };
