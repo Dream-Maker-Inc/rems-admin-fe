@@ -12,7 +12,7 @@ import {
     Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { SectionTemplate } from "../SectionTemplate";
+import { SectionTemplate } from "../common/SectionTemplate";
 import { GroupSelectArea } from "./Elements/GroupSelectArea";
 
 export const SiteSetting = () => {

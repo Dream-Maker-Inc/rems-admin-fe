@@ -9,7 +9,7 @@ import {
     Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { SectionTemplate } from "../SectionTemplate";
+import { SectionTemplate } from "../common/SectionTemplate";
 
 export const SiteInfo = () => {
     const model = {

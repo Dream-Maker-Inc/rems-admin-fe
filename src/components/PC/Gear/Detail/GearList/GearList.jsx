@@ -1,6 +1,6 @@
 import { Stack, Typography } from "@mui/material";
-import { ActionButtons } from "../ActionButtons/ActionButtons";
-import { SectionTemplate } from "../SectionTemplate";
+import { ActionButtons } from "../common/ActionButtons";
+import { SectionTemplate } from "../common/SectionTemplate";
 
 export const GearList = () => {
     const models = getGearModels();
