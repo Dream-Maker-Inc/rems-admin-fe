@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { MeasureSetting } from ".";
+
+<Meta title={"PC/Gear/Detail/계측기명 설정"} component={MeasureSetting} />
+
+# MeasureSetting
+
+계측기명 설정
+
+export const Template = (args) => <MeasureSetting {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

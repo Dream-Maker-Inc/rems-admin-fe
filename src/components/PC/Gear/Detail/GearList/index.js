@@ -1,0 +1,1 @@
+export { GearList } from "./GearList";
