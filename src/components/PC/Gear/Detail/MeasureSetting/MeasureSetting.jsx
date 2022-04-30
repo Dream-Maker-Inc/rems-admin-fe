@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import {
+    Button,
     Paper,
     Stack,
     Table,
@@ -26,6 +27,8 @@ export const MeasureSetting = () => {
     // 교체일
     const [changedDate, setChangedDate] = useState("");
     const handleChangedDateChange = (v) => setChangedDate(v);
+
+    const handleAddItem = () => alert("add item");
 
     return (
         <SectionTemplate title={"[계측기명] 설정"}>
@@ -77,6 +80,12 @@ export const MeasureSetting = () => {
                     </TableBody>
                 </CustomTable>
             </TableContainer>
+
+            <Stack alignItems={"flex-end"}>
+                <Button variant="contained" onClick={handleAddItem}>
+                    추가
+                </Button>
+            </Stack>
         </SectionTemplate>
     );
 };
