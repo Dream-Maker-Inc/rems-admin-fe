@@ -6,8 +6,16 @@ export const SlidingDrawer = ({ title, children }) => {
     const [drawerOpen, setDrawerOpen] = useState(true);
     const closeDrawer = () => setDrawerOpen(false);
 
+    // drawer 가로 길이 고정값
+    const drawerWidth = "1000px";
+
     return (
-        <StyledDrawer anchor="right" open={drawerOpen} onClose={closeDrawer}>
+        <StyledDrawer
+            anchor="right"
+            drawerwidth={drawerWidth}
+            open={drawerOpen}
+            onClose={closeDrawer}
+        >
             <Stack maxWidth={"100%"} overflow={"hidden"}>
                 <DrawerAppbar title={title} />
                 <Content>{children}</Content>
@@ -18,7 +26,7 @@ export const SlidingDrawer = ({ title, children }) => {
 
 const StyledDrawer = styled(Drawer)`
     & .MuiPaper-root {
-        max-width: 1000px;
+        max-width: ${({ drawerwidth }) => drawerwidth};
     }
 `;
 
