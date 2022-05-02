@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { UnifiedSearch } from ".";
+
+<Meta title={"PC/Search/통합 검색"} component={UnifiedSearch} />
+
+# UnifiedSearch
+
+통합 검색
+
+export const Template = (args) => <UnifiedSearch {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
