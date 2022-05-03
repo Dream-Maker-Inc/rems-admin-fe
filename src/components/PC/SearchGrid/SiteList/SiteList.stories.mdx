@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SiteList } from ".";
+
+<Meta title={"PC/Search/사이트 목록"} component={SiteList} />
+
+# SiteList
+
+사이트 목록
+
+export const Template = (args) => <SiteList {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
