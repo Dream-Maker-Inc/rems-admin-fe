@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SearchGridView } from ".";
+
+<Meta title={"PC/Search/[Page] Search&Grid 뷰"} component={SearchGridView} />
+
+# SearchGridView
+
+Search&Grid 뷰
+
+export const Template = (args) => <SearchGridView {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

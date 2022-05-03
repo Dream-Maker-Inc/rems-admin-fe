@@ -142,6 +142,7 @@ const Root = ({ children }) => (
         padding={"16px"}
         color={"#fff"}
         whiteSpace={"nowrap"}
+        borderRadius={"4px"}
         spacing={"16px"}
     >
         {children}
@@ -163,6 +164,7 @@ const DateSectionRow = ({ children }) => (
 const DateTextField = styled(TextField)`
     color-scheme: dark;
     background-color: #3a444d;
+    width: 160px;
 `;
 
 const CustomSelector = ({ value, onChange, items }) => (

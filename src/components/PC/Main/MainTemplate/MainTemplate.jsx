@@ -20,7 +20,6 @@ const Root = styled(Stack)`
     flex-direction: row;
     min-width: 1440px;
     width: 100%;
-    min-height: 800px;
     height: 100%;
 `;
 
@@ -32,4 +31,5 @@ const Right = styled(Stack)`
 const ContentSection = styled(Stack)`
     background-color: #303539;
     height: 100%;
+    overflow: hidden;
 `;

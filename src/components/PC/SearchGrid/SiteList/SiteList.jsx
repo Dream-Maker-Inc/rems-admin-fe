@@ -64,7 +64,7 @@ export const SiteList = () => {
         { label: "등록일" },
         { label: "설치일" },
         { label: "개통일" },
-        { label: "주소", colSpan: 2 },
+        { label: "주소", width: "30%" },
     ];
 
     const totalItemCount = 150;
@@ -82,7 +82,7 @@ export const SiteList = () => {
                         <TableHead>
                             <TableRow>
                                 {headers.map((it) => (
-                                    <TH key={it.label} colSpan={it.colSpan}>
+                                    <TH key={it.label} width={it.width}>
                                         {it.label}
                                     </TH>
                                 ))}
@@ -141,11 +141,10 @@ const CustomTable = ({ children }) => (
     </Table>
 );
 
-const TH = ({ colSpan, children }) => (
+const TH = ({ width = "140px", children }) => (
     <TableCell
         component={"th"}
-        colSpan={colSpan}
-        width={"140px"}
+        width={width}
         sx={{
             bgcolor: "#3f464c",
             border: "1px solid #555",
@@ -157,10 +156,9 @@ const TH = ({ colSpan, children }) => (
     </TableCell>
 );
 
-const TD = ({ colSpan, children }) => (
+const TD = ({ children }) => (
     <TableCell
         component={"td"}
-        colSpan={colSpan}
         sx={{
             bgcolor: "#3a3f43",
             border: "1px solid #555",
@@ -196,6 +194,7 @@ const Header = ({ onExcelDownload }) => (
         <Tooltip title={"엑셀 파일로 다운로드"}>
             <Button
                 variant="contained"
+                size="small"
                 startIcon={<ExcelIcon />}
                 onClick={onExcelDownload}
             >

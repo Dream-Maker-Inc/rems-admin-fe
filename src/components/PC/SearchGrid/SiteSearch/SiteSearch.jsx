@@ -17,6 +17,7 @@ const Root = ({ children }) => (
         padding={"16px"}
         color={"#fff"}
         whiteSpace={"nowrap"}
+        borderRadius={"4px"}
         spacing={"16px"}
     >
         {children}

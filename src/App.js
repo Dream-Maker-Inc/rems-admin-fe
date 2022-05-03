@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@mui/material/styles";
-import { MainTemplate } from "./components/Mobile/Main/MainTemplate";
-import { NotificationDetailPopup } from "./components/PC/Notification/Detail";
+import { MainTemplate } from "./components/PC/Main/MainTemplate";
+import { SearchGridView } from "./components/PC/SearchGrid/SearchGridView";
 import { laptopTheme, mobileTheme } from "./themes/CustomThemes";
 import { useCustomMediaQuery } from "./themes/UseCustomMediaQuery";
 
@@ -10,7 +10,7 @@ function App() {
     return (
         <ThemeProvider theme={isTablet ? mobileTheme : laptopTheme}>
             <MainTemplate>
-                <NotificationDetailPopup />
+                <SearchGridView />
             </MainTemplate>
         </ThemeProvider>
     );

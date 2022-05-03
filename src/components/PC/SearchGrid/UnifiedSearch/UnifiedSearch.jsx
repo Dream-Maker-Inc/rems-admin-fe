@@ -28,6 +28,8 @@ export const UnifiedSearch = () => {
     const [gear, setGear] = useState(gears[0]);
     const handleGearChange = (v) => setGear(v);
 
+    const handleSearch = () => alert("search");
+
     return (
         <Root>
             <Stack direction={"row"} spacing={"24px"}>
@@ -82,7 +84,11 @@ export const UnifiedSearch = () => {
             </Stack>
 
             <Stack>
-                <Button variant="contained" startIcon={<SearchRounded />}>
+                <Button
+                    variant="contained"
+                    startIcon={<SearchRounded />}
+                    onClick={handleSearch}
+                >
                     검색
                 </Button>
             </Stack>
@@ -97,6 +103,7 @@ const Root = ({ children }) => (
         padding={"16px"}
         color={"#fff"}
         bgcolor={"#394750"}
+        borderRadius={"4px"}
         whiteSpace={"nowrap"}
         justifyContent={"space-between"}
         spacing={"16px"}
