@@ -37,6 +37,7 @@ export const UnifiedSearch = () => {
                     </Typography>
                     <TextField
                         size="small"
+                        sx={{ bgcolor: "#3a444d" }}
                         value={siteName}
                         onChange={(e) => handleSiteNameChange(e.target.value)}
                     />
@@ -112,6 +113,7 @@ const ItemRow = ({ children }) => (
 
 const DateTextField = styled(TextField)`
     color-scheme: dark;
+    background-color: #3a444d;
 `;
 
 const CustomSelector = ({ value, onChange, items }) => (
