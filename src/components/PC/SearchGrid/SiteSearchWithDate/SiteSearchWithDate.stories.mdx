@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SiteSearchWithDate } from ".";
+
+<Meta title={"PC/Search/날짜로 사이트 검색"} component={SiteSearchWithDate} />
+
+# SiteSearchWithDate
+
+날짜로 사이트 검색
+
+export const Template = (args) => <SiteSearchWithDate {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
