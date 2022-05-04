@@ -4,10 +4,7 @@ import {
     Pagination,
     Paper,
     Stack,
-    Table,
     TableBody,
-    TableCell,
-    TableContainer,
     TableHead,
     TableRow,
     Tooltip,
@@ -15,6 +12,13 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { ExcelIcon } from "../../../common/icons";
+import {
+    BasicTable,
+    BasicTableContainer,
+    BasicTd,
+    BasicTdRow,
+    BasicTh,
+} from "../../../common/tables/BasicTable";
 
 export const SiteList = () => {
     const handleExcelDownload = () => alert("excel");
@@ -52,33 +56,33 @@ export const SiteList = () => {
             <Header onExcelDownload={handleExcelDownload} />
 
             <Inner>
-                <TableContainer sx={{ height: "400px" }}>
-                    <CustomTable>
+                <BasicTableContainer sx={{ height: "400px" }}>
+                    <BasicTable>
                         <TableHead>
                             <TableRow>
                                 {headers.map((it) => (
-                                    <TH key={it.label} width={it.width}>
+                                    <BasicTh key={it.label} width={it.width}>
                                         {it.label}
-                                    </TH>
+                                    </BasicTh>
                                 ))}
                             </TableRow>
                         </TableHead>
 
                         <TableBody>
                             {models.map(({ id, ...rest }) => (
-                                <TableDataRow
+                                <BasicTdRow
                                     key={id}
                                     selected={isSelectedRow(id)}
                                     onClick={() => handleSelectedRowId(id)}
                                 >
                                     {Object.values(rest).map((it, index) => (
-                                        <TD key={index}>{it}</TD>
+                                        <BasicTd key={index}>{it}</BasicTd>
                                     ))}
-                                </TableDataRow>
+                                </BasicTdRow>
                             ))}
                         </TableBody>
-                    </CustomTable>
-                </TableContainer>
+                    </BasicTable>
+                </BasicTableContainer>
 
                 <TableFooter>
                     <Typography
@@ -116,58 +120,6 @@ const Inner = ({ children }) => (
     <Stack component={Paper} sx={{ overflow: "hidden", bgcolor: "#303133" }}>
         {children}
     </Stack>
-);
-
-const CustomTable = ({ children }) => (
-    <Table
-        stickyHeader
-        sx={{
-            borderCollapse: "collapse",
-            borderStyle: "hidden",
-            "& .Mui-selected": { backgroundColor: "#43484c !important" },
-        }}
-    >
-        {children}
-    </Table>
-);
-
-const TH = ({ width = "140px", children }) => (
-    <TableCell
-        component={"th"}
-        width={width}
-        sx={{
-            bgcolor: "#3f464c",
-            border: "1px solid #555",
-            textAlign: "center",
-            whiteSpace: "nowrap",
-        }}
-    >
-        <Typography>{children}</Typography>
-    </TableCell>
-);
-
-const TableDataRow = ({ selected, onClick, children }) => (
-    <TableRow
-        hover
-        sx={{ bgcolor: "#3a3f43" }}
-        selected={selected}
-        onClick={onClick}
-    >
-        {children}
-    </TableRow>
-);
-
-const TD = ({ children }) => (
-    <TableCell
-        component={"td"}
-        sx={{
-            border: "1px solid #555",
-            textAlign: "center",
-            minWidth: "140px",
-        }}
-    >
-        {children}
-    </TableCell>
 );
 
 const TableFooter = ({ children }) => (
