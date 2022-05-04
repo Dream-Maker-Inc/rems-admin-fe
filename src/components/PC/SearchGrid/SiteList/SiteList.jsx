@@ -19,44 +19,15 @@ import { ExcelIcon } from "../../../common/icons";
 export const SiteList = () => {
     const handleExcelDownload = () => alert("excel");
 
-    const models = [
-        {
-            id: 1,
-            siteName: "편백경로당",
-            operationType: "운영",
-            createdAt: "2021-09-01",
-            installedAt: "2021-09-01",
-            openedAt: "2021-09-01",
-            address: "서울시 노원구",
-        },
-        {
-            id: 2,
-            siteName: "편백경로당",
-            operationType: "운영",
-            createdAt: "2021-09-01",
-            installedAt: "2021-09-01",
-            openedAt: "2021-09-01",
-            address: "서울시 노원구",
-        },
-        {
-            id: 3,
-            siteName: "편백경로당",
-            operationType: "운영",
-            createdAt: "2021-09-01",
-            installedAt: "2021-09-01",
-            openedAt: "2021-09-01",
-            address: "서울시 노원구",
-        },
-        {
-            id: 4,
-            siteName: "편백경로당",
-            operationType: "운영",
-            createdAt: "2021-09-01",
-            installedAt: "2021-09-01",
-            openedAt: "2021-09-01",
-            address: "서울시 노원구",
-        },
-    ];
+    const models = Array.from({ length: 10 }, (_, index) => ({
+        id: index + 1,
+        siteName: "편백경로당",
+        operationType: "운영",
+        createdAt: "2021-09-01",
+        installedAt: "2021-09-01",
+        openedAt: "2021-09-01",
+        address: "서울시 노원구",
+    }));
 
     const headers = [
         { label: "사이트명" },
@@ -77,7 +48,7 @@ export const SiteList = () => {
             <Header onExcelDownload={handleExcelDownload} />
 
             <Inner>
-                <TableContainer>
+                <TableContainer sx={{ height: "400px" }}>
                     <CustomTable>
                         <TableHead>
                             <TableRow>
@@ -119,6 +90,16 @@ export const SiteList = () => {
                     />
                 </TableFooter>
             </Inner>
+
+            <Stack direction={"row"} spacing={"8px"} alignSelf={"flex-end"}>
+                <Button variant="contained">신규</Button>
+
+                <Stack color={"#aaa"}>
+                    <Button variant="outlined" color="inherit">
+                        수정
+                    </Button>
+                </Stack>
+            </Stack>
         </Stack>
     );
 };
