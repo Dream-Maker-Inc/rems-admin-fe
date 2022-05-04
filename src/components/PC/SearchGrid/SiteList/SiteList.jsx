@@ -38,6 +38,10 @@ export const SiteList = () => {
         { label: "주소", width: "30%" },
     ];
 
+    const [selectedRowId, setSelectedRowId] = useState(0);
+    const handleSelectedRowId = (id) => setSelectedRowId(id);
+    const isSelectedRow = (id) => id === selectedRowId;
+
     const totalItemCount = 150;
     const pageTotalCount = 10;
     const [pageNumber, setPageNumber] = useState(1);
@@ -62,11 +66,15 @@ export const SiteList = () => {
 
                         <TableBody>
                             {models.map(({ id, ...rest }) => (
-                                <TableRow key={id}>
+                                <TableDataRow
+                                    key={id}
+                                    selected={isSelectedRow(id)}
+                                    onClick={() => handleSelectedRowId(id)}
+                                >
                                     {Object.values(rest).map((it, index) => (
                                         <TD key={index}>{it}</TD>
                                     ))}
-                                </TableRow>
+                                </TableDataRow>
                             ))}
                         </TableBody>
                     </CustomTable>
@@ -116,6 +124,7 @@ const CustomTable = ({ children }) => (
         sx={{
             borderCollapse: "collapse",
             borderStyle: "hidden",
+            "& .Mui-selected": { backgroundColor: "#43484c !important" },
         }}
     >
         {children}
@@ -137,11 +146,21 @@ const TH = ({ width = "140px", children }) => (
     </TableCell>
 );
 
+const TableDataRow = ({ selected, onClick, children }) => (
+    <TableRow
+        hover
+        sx={{ bgcolor: "#3a3f43" }}
+        selected={selected}
+        onClick={onClick}
+    >
+        {children}
+    </TableRow>
+);
+
 const TD = ({ children }) => (
     <TableCell
         component={"td"}
         sx={{
-            bgcolor: "#3a3f43",
             border: "1px solid #555",
             textAlign: "center",
             minWidth: "140px",
