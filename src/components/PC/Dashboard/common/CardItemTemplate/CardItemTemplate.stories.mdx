@@ -1,0 +1,20 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { CardItemTemplate } from ".";
+
+<Meta
+    title={"PC/Dashboard/Common/카드 아이템 템플릿"}
+    component={CardItemTemplate}
+/>
+
+# CardItemTemplate
+
+카드 아이템 템플릿
+
+export const Template = (args) => <CardItemTemplate {...args} />;
+
+<Canvas>
+    <Story name="Default" args={{ title: "Title", children: "contents" }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>

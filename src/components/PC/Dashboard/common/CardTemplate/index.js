@@ -1,1 +1,1 @@
-export { CardTempplate } from "./Card.template";
+export { CardTemplate } from "./Card.template";

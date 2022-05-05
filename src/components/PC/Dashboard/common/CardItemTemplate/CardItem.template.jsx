@@ -1,11 +1,15 @@
 import styled from "@emotion/styled";
 import { Stack, Typography } from "@mui/material";
 
-export const CardTemplate = ({ title, children }) => {
+export const CardItemTemplate = ({ title, children }) => {
     return (
         <Root>
             <TitleWrapper>
-                <Typography variant="subtitle1" fontWeight={500}>
+                <Typography
+                    variant="subtitle2"
+                    fontWeight={500}
+                    sx={{ opacity: 0.8 }}
+                >
                     {title}
                 </Typography>
             </TitleWrapper>
@@ -17,7 +21,7 @@ export const CardTemplate = ({ title, children }) => {
 
 const Root = styled(Stack)`
     width: 100%;
-    background-color: #3a3f43;
+    background-color: #3f464c;
     border-radius: 4px;
 `;
 
@@ -28,4 +32,5 @@ const TitleWrapper = styled(Stack)`
 
 const ContentWrapper = styled(Stack)`
     padding: 16px;
+    background-color: #4e5359;
 `;
