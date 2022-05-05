@@ -1,6 +1,7 @@
 import { Stack } from "@mui/material";
 import { CardTemplate } from "../common/CardTemplate";
 import { AirConditionerMap } from "./elements/AirConditionerMap/AirConditionerMap";
+import { SiteListMap } from "./elements/SiteListMap";
 
 export const EachRegionStatus = () => {
     return (
@@ -9,6 +10,7 @@ export const EachRegionStatus = () => {
                 <div>tabs</div>
 
                 {/* <AirConditionerMap /> */}
+                {/* <SiteListMap /> */}
             </Stack>
         </CardTemplate>
     );
