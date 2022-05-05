@@ -45,6 +45,7 @@ export const Map = ({ leftItems, rightItems, legends, unit }) => {
 const Root = styled(Stack)`
     position: relative;
     width: fit-content;
+    margin: -22px -22px -16px -22px; // 이미지 보정
 `;
 
 const Background = styled("img")`
