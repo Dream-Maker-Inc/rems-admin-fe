@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { AllSites } from ".";
+
+<Meta title={"PC/Dashboard/전체 사이트 수"} component={AllSites} />
+
+# AllSites
+
+전체 사이트 수
+
+export const Template = (args) => <AllSites {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

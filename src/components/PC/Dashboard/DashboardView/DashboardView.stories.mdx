@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { DashboardView } from ".";
+
+<Meta title={"PC/Dashboard/[Page] 대시보드 뷰"} component={DashboardView} />
+
+# DashboardView
+
+대시보드 뷰
+
+export const Template = (args) => <DashboardView {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { EachRegionStatus } from ".";
+
+<Meta title={"PC/Dashboard/지역별 현황"} component={EachRegionStatus} />
+
+# EachRegionStatus
+
+지역별 현황
+
+export const Template = (args) => <EachRegionStatus {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { OperationalStatus } from ".";
+
+<Meta title={"PC/Dashboard/냉난방기 작동 현황"} component={OperationalStatus} />
+
+# OperationalStatus
+
+냉난방기 작동 현황
+
+export const Template = (args) => <OperationalStatus {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SiteListMap } from ".";
+
+<Meta title={"PC/Dashboard/[Map]/사이트 수"} component={SiteListMap} />
+
+# SiteListMap
+
+사이트 수
+
+export const Template = (args) => <SiteListMap {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
