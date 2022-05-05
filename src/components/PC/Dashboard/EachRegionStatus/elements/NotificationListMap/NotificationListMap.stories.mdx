@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { NotificationListMap } from ".";
+
+<Meta title={"PC/Dashboard/[Map] 알람"} component={NotificationListMap} />
+
+# NotificationListMap
+
+알람
+
+export const Template = (args) => <NotificationListMap {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
