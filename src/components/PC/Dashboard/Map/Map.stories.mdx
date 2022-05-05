@@ -1,0 +1,20 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { Map } from ".";
+
+<Meta title={"PC/Dashboard/지역별 현황 맵"} component={Map} />
+
+# Map
+
+지역별 현황 맵
+
+export const Template = (args) => <Map {...args} />;
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{ leftItems: [1, 2, 3, 4, 5], rightItems: [1, 2, 3, 4, 5] }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
