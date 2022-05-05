@@ -5,11 +5,7 @@ export const CardItemTemplate = ({ title, children }) => {
     return (
         <Root>
             <TitleWrapper>
-                <Typography
-                    variant="subtitle2"
-                    fontWeight={500}
-                    sx={{ opacity: 0.8 }}
-                >
+                <Typography fontWeight={400} sx={{ opacity: 0.8 }}>
                     {title}
                 </Typography>
             </TitleWrapper>
