@@ -11,10 +11,5 @@ import { EachRegionStatus } from ".";
 export const Template = (args) => <EachRegionStatus {...args} />;
 
 <Canvas>
-    <Story
-        name="Default"
-        args={{ leftItems: [1, 2, 3, 4, 5], rightItems: [1, 2, 3, 4, 5] }}
-    >
-        {Template.bind({})}
-    </Story>
+    <Story name="Default">{Template.bind({})}</Story>
 </Canvas>

@@ -18,6 +18,7 @@ export const CardTemplate = ({ title, width = "100%", children }) => {
 const Root = ({ width, children }) => (
     <Stack
         width={width}
+        height={"100%"}
         sx={{ backgroundColor: "#3a3f43", borderRadius: "4px" }}
     >
         {children}
