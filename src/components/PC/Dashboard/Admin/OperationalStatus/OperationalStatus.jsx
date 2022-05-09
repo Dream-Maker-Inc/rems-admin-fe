@@ -1,7 +1,7 @@
 import { Divider, Stack, Typography } from "@mui/material";
 import React from "react";
-import { CardItemTemplate } from "../common/CardItemTemplate";
-import { CardTemplate } from "../common/CardTemplate";
+import { CardItemTemplate } from "../../common/CardItemTemplate";
+import { CardTemplate } from "../../common/CardTemplate";
 
 export const OperationalStatus = () => {
     const siteModel = {

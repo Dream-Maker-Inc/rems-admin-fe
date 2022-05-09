@@ -5,7 +5,7 @@ import {
     Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { CardTemplate } from "../common/CardTemplate";
+import { CardTemplate } from "../../common/CardTemplate";
 import { AirConditionerMap } from "./elements/AirConditionerMap/AirConditionerMap";
 import { NotificationListMap } from "./elements/NotificationListMap/NotificationListMap";
 import { PowerStatusMap } from "./elements/PowerStatusMap";
