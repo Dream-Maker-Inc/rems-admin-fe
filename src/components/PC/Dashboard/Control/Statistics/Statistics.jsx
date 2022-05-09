@@ -62,7 +62,7 @@ const Root = ({ children }) => (
         spacing={"24px"}
         textAlign={"center"}
         bgcolor={"#3a3f43"}
-        borderRadius={"8px"}
+        borderRadius={"4px"}
         padding={"24px"}
     >
         {children}

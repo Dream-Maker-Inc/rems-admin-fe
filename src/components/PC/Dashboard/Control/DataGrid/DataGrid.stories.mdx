@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { DataGrid } from ".";
+
+<Meta title={"PC/Dashboard/Control/데이터 그리드"} component={DataGrid} />
+
+# DataGrid
+
+데이터 그리드
+
+export const Template = (args) => <DataGrid {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
