@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { ControlDashboardView } from ".";
+
+<Meta
+    title={"PC/Dashboard/Control/[Page] 관제 대시보드 뷰"}
+    component={ControlDashboardView}
+/>
+
+# ControlDashboardView
+
+관제 대시보드 뷰
+
+export const Template = (args) => <ControlDashboardView {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

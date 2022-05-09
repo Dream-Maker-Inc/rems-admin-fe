@@ -29,4 +29,5 @@ const TitleWrapper = styled(Stack)`
 const ContentWrapper = styled(Stack)`
     padding: 16px;
     background-color: #4e5359;
+    height: 100%;
 `;

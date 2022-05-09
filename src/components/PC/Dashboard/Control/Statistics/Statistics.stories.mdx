@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { Statistics } from ".";
+
+<Meta title={"PC/Dashboard/Control/상단 통계 섹션"} component={Statistics} />
+
+# Statistics
+
+상단 통계 섹션
+
+export const Template = (args) => <Statistics {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
