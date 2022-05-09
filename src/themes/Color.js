@@ -1,6 +1,9 @@
 export const laptopColor = {
     primary: "#91a23c",
-    secondary: "#e83b3e",
+    secondary: "#e83b3e", // 하이라이트 컬러
+    secondary2: "#dd991c",
+    tertiary: "#dd7b92",
+    quaternary: "#569cd8",
 };
 
 export const laptopPalette = {
