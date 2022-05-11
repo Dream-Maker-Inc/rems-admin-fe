@@ -5,7 +5,10 @@ import HighchartsReact from "highcharts-react-official";
 
 /**
 const model = {
-    title: "사용량",
+    title: {
+        label: "사용량",
+        color: laptopColor.quaternary
+    },
     data: [
         {
             label: "전력",
@@ -24,7 +27,7 @@ const model = {
 export const PieChart = ({ model }) => {
     const series = [
         {
-            name: model.title,
+            name: model.title.label,
             data: model.data.map((it, index) => ({
                 name: it.label,
                 y: it.value,

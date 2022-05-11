@@ -65,6 +65,7 @@ const Root = ({ children }) => (
     <Stack
         direction={"row"}
         width="100%"
+        height="100%"
         bgcolor="#4e5359"
         maxHeight={"240px"}
         borderRadius={"4px"}

@@ -1,7 +1,10 @@
+import styled from "@emotion/styled";
 import { Stack, Typography } from "@mui/material";
 import { laptopColor } from "../../../../../../themes/Color";
 import { ListWithPieChart } from "../../../../../common/charts/ListWithPieChart";
 import { ItemCardTemplate } from "../../common/ItemCardTemplate";
+import { BackgroundLineCanvas } from "./BgLineCanvas/BackgroundLineCanvas";
+import { useBackGroundLineCanvas } from "./BgLineCanvas/useBackgroundLineCanvas";
 
 export const Overall = () => {
     const model = {
@@ -89,58 +92,75 @@ export const Overall = () => {
     };
     const { energyProduction, energyUsage, summaryOfItems } = model;
 
+    const { topBoxesRef, getTopBoxRef, secondRowBoxesRef, getSecondRowBoxRef } =
+        useBackGroundLineCanvas();
+
     return (
-        <Stack bgcolor={"#3a3f43"} padding={"24px"} width="100%">
-            <Stack direction={"row"} spacing={"24px"}>
-                <ListWithPieChart
-                    model={{
-                        title: {
-                            label: "에너지 생산량",
-                            color: laptopColor.secondary2,
-                        },
-                        data: energyProduction.data,
-                        unit: energyProduction.unit,
-                    }}
-                />
+        <Root>
+            <Inner>
+                <Row>
+                    <Stack ref={getTopBoxRef(0)} width={"100%"}>
+                        <ListWithPieChart
+                            model={{
+                                title: {
+                                    label: "에너지 생산량",
+                                    color: laptopColor.secondary2,
+                                },
+                                data: energyProduction.data,
+                                unit: energyProduction.unit,
+                            }}
+                        />
+                    </Stack>
 
-                <ListWithPieChart
-                    model={{
-                        title: {
-                            label: "에너지 사용량",
-                            color: laptopColor.quaternary,
-                        },
-                        data: energyUsage.data,
-                        unit: energyUsage.unit,
-                    }}
-                />
-            </Stack>
+                    <Stack ref={getTopBoxRef(1)} width={"100%"}>
+                        <ListWithPieChart
+                            model={{
+                                title: {
+                                    label: "에너지 사용량",
+                                    color: laptopColor.quaternary,
+                                },
+                                data: energyUsage.data,
+                                unit: energyUsage.unit,
+                            }}
+                        />
+                    </Stack>
+                </Row>
 
-            <Stack mt={"48px"}>
-                <Stack direction={"row"} spacing={"24px"}>
-                    {summaryOfItems.map((it) => (
-                        <Column key={it.label}>
-                            <TitleWithUsages
-                                title={it.label}
-                                label1={`${it.usage.value} ${it.usage.unit}`}
-                                label2={`${it.usage.percentageOfTotal}%`}
-                            />
-
-                            {it.gears && (
-                                <ItemCardTemplate
-                                    rows={it.gears.map((it) => (
-                                        <Typography
-                                            key={it}
-                                        >{`${it.label}(${it.count})`}</Typography>
-                                    ))}
-                                    innerPadding={"8px 16px"}
-                                    height={"136px"}
+                <Stack mt={"48px"}>
+                    <Row>
+                        {summaryOfItems.map((it, index) => (
+                            <Column
+                                key={it.label}
+                                ref={getSecondRowBoxRef(index)}
+                            >
+                                <TitleWithUsages
+                                    title={it.label}
+                                    label1={`${it.usage.value} ${it.usage.unit}`}
+                                    label2={`${it.usage.percentageOfTotal}%`}
                                 />
-                            )}
-                        </Column>
-                    ))}
+
+                                {it.gears && (
+                                    <ItemCardTemplate
+                                        rows={it.gears.map((it) => (
+                                            <Typography
+                                                key={it}
+                                            >{`${it.label}(${it.count})`}</Typography>
+                                        ))}
+                                        innerPadding={"8px 16px"}
+                                        height={"136px"}
+                                    />
+                                )}
+                            </Column>
+                        ))}
+                    </Row>
                 </Stack>
-            </Stack>
-        </Stack>
+            </Inner>
+
+            <BackgroundLineCanvas
+                topBoxesRef={topBoxesRef}
+                secondRowBoxesRef={secondRowBoxesRef}
+            />
+        </Root>
     );
 };
 
@@ -170,8 +190,24 @@ const TitleWithUsages = ({ title, label1, label2 }) => {
     );
 };
 
-const Column = ({ children }) => (
-    <Stack spacing={"24px"} width={"100%"}>
-        {children}
-    </Stack>
-);
+const Root = styled(Stack)`
+    background-color: #3a3f43;
+    width: 100%;
+    position: relative;
+`;
+
+const Inner = styled(Stack)`
+    padding: 24px;
+    overflow: hidden;
+    z-index: 3;
+`;
+
+const Row = styled(Stack)`
+    flex-direction: row;
+    gap: 24px;
+`;
+
+const Column = styled(Stack)`
+    width: 100%;
+    gap: 24px;
+`;
