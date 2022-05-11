@@ -8,12 +8,14 @@ const model = {
     title: "사용량",
     data: [
         {
-            label: "가스",
-            value: 10,
-        },
-        {
             label: "전력",
             value: 20,
+            color: "#63db72",
+        },
+        {
+            label: "가스",
+            value: 10,
+            color: "#d56969",
         },
     ],
 };
@@ -31,6 +33,9 @@ export const PieChart = ({ model }) => {
             })),
         },
     ];
+    const colors = model.data.map((it) => it.color);
+
+    const dataLabelDistance = !(model.data.length - 1) ? -150 : -55;
 
     const chartOptions = {
         chart: {
@@ -46,7 +51,7 @@ export const PieChart = ({ model }) => {
         tooltip: {
             pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
             style: {
-                fontSize: "1.4rem",
+                fontSize: "1.6rem",
             },
         },
         accessibility: {
@@ -56,10 +61,13 @@ export const PieChart = ({ model }) => {
             pie: {
                 allowPointSelect: true,
                 cursor: "pointer",
+                size: "100%",
+                colors: colors,
+                borderColor: "#eeeeee33",
                 dataLabels: {
                     enabled: true,
                     format: "<b>{point.percentage:.1f}%</b>",
-                    distance: -50,
+                    distance: dataLabelDistance,
                     filter: {
                         property: "percentage",
                         operator: ">",
@@ -67,7 +75,7 @@ export const PieChart = ({ model }) => {
                     },
                     style: {
                         textOutline: false,
-                        fontSize: "1.4rem",
+                        fontSize: "1.6rem",
                     },
                 },
                 showInLegend: true,
@@ -75,8 +83,7 @@ export const PieChart = ({ model }) => {
         },
         series: series,
         legend: {
-            itemStyle: { color: "#fff", fontSize: "1.2rem" },
-            itemMarginBottom: 12,
+            itemStyle: { color: "#fff", fontSize: "1.6rem" },
         },
         credits: { enabled: false },
     };
@@ -93,10 +100,12 @@ const ChartWrapper = styled(Stack)`
     .highcharts-root {
         width: 100% !important;
         height: auto !important;
-        aspect-ratio: 16/10.5;
+        aspect-ratio: 16/10;
     }
 
-    .highcharts-label tspan {
-        font-size: inherit !important;
+    .highcharts-label {
+        tspan {
+            font-size: inherit !important;
+        }
     }
 `;

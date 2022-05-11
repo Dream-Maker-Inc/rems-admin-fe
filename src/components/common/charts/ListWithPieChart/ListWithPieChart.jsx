@@ -1,18 +1,22 @@
 import { Stack, Typography } from "@mui/material";
-import { laptopColor } from "../../../../themes/Color";
 import { PieChart } from "./PieChart";
 
 /**
 const model = {
-    title: "사용량",
+    title: {
+        label: "사용량",
+        color: laptopColor.quaternary
+    },
     data: [
-        {
-            label: "가스",
-            value: 10,
-        },
         {
             label: "전력",
             value: 20,
+            color: "#63db72",
+        },
+        {
+            label: "가스",
+            value: 10,
+            color: "#d56969",
         },
     ],
 };
@@ -27,12 +31,12 @@ export const ListWithPieChart = ({ model }) => {
             <Left>
                 <LeftHeader>
                     <Typography variant="h6" fontWeight={400}>
-                        {model.title}
+                        {model.title.label}
                     </Typography>
                     <Typography
                         variant="h6"
                         fontWeight={600}
-                        color={laptopColor.quaternary}
+                        color={model.title.color}
                     >
                         {totalValueLabel}
                     </Typography>
@@ -62,8 +66,8 @@ const Root = ({ children }) => (
         direction={"row"}
         width="100%"
         bgcolor="#4e5359"
-        maxHeight={"300px"}
-        padding={"24px"}
+        maxHeight={"240px"}
+        borderRadius={"4px"}
         overflow={"hidden"}
     >
         {children}
@@ -71,7 +75,12 @@ const Root = ({ children }) => (
 );
 
 const Left = ({ children }) => (
-    <Stack width={"100%"} borderRadius={"4px"} overflow={"hidden"}>
+    <Stack
+        width={"100%"}
+        borderRadius={"4px"}
+        overflow={"hidden"}
+        padding={"24px 0 24px 24px"}
+    >
         {children}
     </Stack>
 );
@@ -81,6 +90,7 @@ const LeftHeader = ({ children }) => (
         bgcolor="#3d4045"
         direction={"row"}
         justifyContent={"space-between"}
+        spacing={"8px"}
         padding={"16px"}
     >
         {children}
@@ -111,12 +121,12 @@ const LeftItemRow = ({ label, value, unit }) => {
 
 const ChartContainer = ({ children }) => (
     <Stack
-        minWidth="400px"
+        minWidth="340px"
         height="100%"
         overflow={"hidden"}
         position="relative"
         ml={"-60px"}
-        mr={"-80px"}
+        mr={"-60px"}
     >
         {children}
     </Stack>
