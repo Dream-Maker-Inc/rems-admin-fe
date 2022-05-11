@@ -1,0 +1,38 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { ListWithPieChart } from ".";
+
+<Meta
+    title={"PC/Dashboard/ZEB/List with Pie Chart"}
+    component={ListWithPieChart}
+/>
+
+# ListWithPieChart
+
+List with Pie Chart
+
+export const Template = (args) => <ListWithPieChart {...args} />;
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{
+            model: {
+                title: "에너지 사용량",
+                data: [
+                    {
+                        label: "전력",
+                        value: 20,
+                    },
+                    {
+                        label: "가스",
+                        value: 10,
+                    },
+                ],
+                unit: "kWh",
+            },
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
