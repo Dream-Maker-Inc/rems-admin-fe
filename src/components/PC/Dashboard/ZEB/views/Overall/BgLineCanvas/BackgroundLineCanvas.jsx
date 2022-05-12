@@ -39,7 +39,7 @@ export const BackgroundLineCanvas = ({ topBoxesRef, secondRowBoxesRef }) => {
             drawLine(
                 {
                     x: it.xCenter,
-                    y: 270 - 2.5,
+                    y: 282,
                     x1: it.xCenter,
                     y1: index !== secondRowBoxesLastIndex ? 480 : 320,
                 },
