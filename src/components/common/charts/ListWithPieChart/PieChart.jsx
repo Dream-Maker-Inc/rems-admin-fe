@@ -91,10 +91,6 @@ export const PieChart = ({ model }) => {
 };
 
 const ChartWrapper = styled(Stack)`
-    .highcharts-container,
-    .highcharts-root {
-    }
-
     .highcharts-label {
         tspan {
             font-size: inherit !important;

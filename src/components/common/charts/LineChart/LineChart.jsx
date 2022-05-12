@@ -13,7 +13,7 @@ export const LineChart = () => {
         data: it.data.map((it) => it.value),
     }));
 
-    const cateories = dates;
+    const categories = dates;
 
     const options = {
         title: { text: "" },
@@ -23,7 +23,7 @@ export const LineChart = () => {
             labels: { format: `{text} ${unit}` },
         },
         xAxis: {
-            categories: cateories,
+            categories: categories,
         },
         credits: { enabled: false },
     };
