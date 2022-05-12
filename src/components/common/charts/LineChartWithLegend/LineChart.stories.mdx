@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { LineChartWithLegend } from ".";
+
+<Meta title={"Common/LineChartWithLegend"} component={LineChartWithLegend} />
+
+# LineChartWithLegend
+
+LineChartWithLegend
+
+export const Template = (args) => <LineChartWithLegend {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

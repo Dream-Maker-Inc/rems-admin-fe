@@ -24,7 +24,7 @@ const model = {
 };
  */
 
-export const PieChart = ({ model }) => {
+export const PieChart = ({ model, size = 240 }) => {
     const { title, data } = model;
 
     const series = [
@@ -48,8 +48,8 @@ export const PieChart = ({ model }) => {
             plotShadow: false,
             type: "pie",
             backgroundColor: "transparent",
-            width: 240,
-            height: 240,
+            width: size,
+            height: size,
         },
         title: { style: { display: "none" } },
         tooltip: {
@@ -60,7 +60,7 @@ export const PieChart = ({ model }) => {
             pie: {
                 allowPointSelect: true,
                 cursor: "pointer",
-                colors: colors,
+                colors: colors[0] && colors,
                 borderColor: "#eeeeee33",
                 dataLabels: {
                     enabled: true,
@@ -71,7 +71,10 @@ export const PieChart = ({ model }) => {
                         operator: ">",
                         value: 4,
                     },
-                    style: { textOutline: false, fontSize: "1rem" },
+                    style: {
+                        fontSize: "1rem",
+                        color: "#ddd",
+                    },
                 },
                 showInLegend: true,
             },
@@ -79,6 +82,8 @@ export const PieChart = ({ model }) => {
         series: series,
         legend: {
             itemStyle: { color: "#fff" },
+            itemHoverStyle: { color: "#aaa" },
+            itemMarginBottom: 8,
         },
         credits: { enabled: false },
     };
@@ -91,12 +96,9 @@ export const PieChart = ({ model }) => {
 };
 
 const ChartWrapper = styled(Stack)`
-    .highcharts-container,
-    .highcharts-root {
-    }
-
     .highcharts-label {
         tspan {
+            stroke-width: 1px !important;
             font-size: inherit !important;
         }
     }

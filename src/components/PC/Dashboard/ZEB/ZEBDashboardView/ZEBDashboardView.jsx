@@ -2,8 +2,9 @@ import styled from "@emotion/styled";
 import { Stack } from "@mui/material";
 import { useState } from "react";
 import { SiteSearchWithDate } from "../../../SearchGrid/SiteSearchWithDate";
-import { CustomTabs } from "../common/CustomTabs";
 import { Overall } from "../views/Overall";
+import { EnergyDataInfo } from "../views/EnergyDataInfo";
+import { CustomTabs } from "../../../common/CustomTabs";
 
 export const ZEBDashboardView = () => {
     const tabItems = [
@@ -14,7 +15,19 @@ export const ZEBDashboardView = () => {
         "계측기 이력",
     ];
     const [tab, setTab] = useState(tabItems[0]);
+    const tabIndex = tabItems.findIndex((it) => it === tab);
     const handleTabChange = (v) => setTab(v);
+
+    const getTabPanel = () => {
+        switch (tabIndex) {
+            case 0:
+                return <Overall />;
+            case 1:
+                return <EnergyDataInfo />;
+            default:
+                return;
+        }
+    };
 
     return (
         <Root>
@@ -26,7 +39,8 @@ export const ZEBDashboardView = () => {
                     value={tab}
                     onChange={(_, v) => handleTabChange(v)}
                 />
-                <Overall />
+
+                {getTabPanel()}
             </Stack>
         </Root>
     );
