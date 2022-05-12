@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { Overall } from ".";
+
+<Meta title={"PC/Dashboard/ZEB/views/건물 전체"} component={Overall} />
+
+# Overall
+
+건물 전체
+
+export const Template = (args) => <Overall {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

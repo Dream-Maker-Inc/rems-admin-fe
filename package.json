@@ -63,10 +63,10 @@
         "@storybook/preset-create-react-app": "^4.1.0",
         "@storybook/react": "^6.4.20",
         "@storybook/testing-library": "^0.0.9",
-        "highcharts": "^10.0.0",
+        "highcharts": "^10.1.0",
         "highcharts-react-official": "^3.1.0",
         "storybook-addon-multi-theme": "^0.0.8",
-        "webpack": "^5.71.0",
-        "swiper": "^8.1.1"
+        "swiper": "^8.1.1",
+        "webpack": "^5.71.0"
     }
 }
