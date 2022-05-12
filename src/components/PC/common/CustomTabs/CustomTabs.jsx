@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Tab, Tabs } from "@mui/material";
-import { laptopColor } from "../../../../../../themes/Color";
+import { laptopColor } from "../../../../themes/Color";
 
 export const CustomTabs = ({ items, value, onChange }) => {
     return (

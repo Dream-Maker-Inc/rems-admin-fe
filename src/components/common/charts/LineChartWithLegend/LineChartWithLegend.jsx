@@ -16,7 +16,12 @@ export const LineChartWithLegend = () => {
     const categories = dates;
 
     const chartOptions = {
-        chart: { backgroundColor: "none", spacingTop: 48, spacingBottom: 36 },
+        chart: {
+            backgroundColor: "none",
+            spacingTop: 48,
+            spacingBottom: 36,
+            height: 300,
+        },
         title: { style: { display: "none" } },
 
         yAxis: {
@@ -32,9 +37,7 @@ export const LineChartWithLegend = () => {
             itemMarginBottom: 8,
 
             itemStyle: { color: "#fff" },
-            itemHoverStyle: {
-                color: "#aaa",
-            },
+            itemHoverStyle: { color: "#aaa" },
         },
 
         series: series,
@@ -67,7 +70,6 @@ export const LineChartWithLegend = () => {
 
 const ChartWrapper = styled(Stack)`
     width: 100%;
-    background-color: #4e5359;
     color: #fff;
     border-radius: 4px;
 `;

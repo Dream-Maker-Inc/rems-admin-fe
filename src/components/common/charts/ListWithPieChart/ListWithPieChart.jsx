@@ -1,4 +1,5 @@
 import { Stack, Typography } from "@mui/material";
+import { DataHighlight } from "../../DataHighlight";
 import { PieChart } from "./PieChart";
 
 /**
@@ -29,18 +30,11 @@ export const ListWithPieChart = ({ model }) => {
     return (
         <Root>
             <Left>
-                <LeftHeader>
-                    <Typography variant="h6" fontWeight={400}>
-                        {model.title.label}
-                    </Typography>
-                    <Typography
-                        variant="h6"
-                        fontWeight={600}
-                        color={model.title.color}
-                    >
-                        {totalValueLabel}
-                    </Typography>
-                </LeftHeader>
+                <DataHighlight
+                    title={model.title.label}
+                    color={model.title.color}
+                    valueLabel={totalValueLabel}
+                />
 
                 <Scrollable>
                     {model.data.map((it, index) => (
@@ -80,19 +74,6 @@ const Left = ({ children }) => (
         borderRadius={"4px"}
         overflow={"hidden"}
         padding={"24px 0 24px 24px"}
-    >
-        {children}
-    </Stack>
-);
-
-const LeftHeader = ({ children }) => (
-    <Stack
-        bgcolor="#3d4045"
-        direction={"row"}
-        justifyContent={"space-between"}
-        borderRadius={"4px"}
-        spacing={"8px"}
-        padding={"16px"}
     >
         {children}
     </Stack>
