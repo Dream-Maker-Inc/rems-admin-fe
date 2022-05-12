@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { ZEBDashboardView } from ".";
+
+<Meta
+    title={"PC/Dashboard/ZEB/[Page] 데이터 조회 뷰"}
+    component={ZEBDashboardView}
+/>
+
+# ZEBDashboardView
+
+데이터 조회 뷰
+
+export const Template = (args) => <ZEBDashboardView {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

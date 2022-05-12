@@ -65,9 +65,8 @@ const Root = ({ children }) => (
     <Stack
         direction={"row"}
         width="100%"
-        height="100%"
+        height="240px"
         bgcolor="#4e5359"
-        maxHeight={"240px"}
         borderRadius={"4px"}
         overflow={"hidden"}
     >
@@ -91,6 +90,7 @@ const LeftHeader = ({ children }) => (
         bgcolor="#3d4045"
         direction={"row"}
         justifyContent={"space-between"}
+        borderRadius={"4px"}
         spacing={"8px"}
         padding={"16px"}
     >
@@ -122,12 +122,10 @@ const LeftItemRow = ({ label, value, unit }) => {
 
 const ChartContainer = ({ children }) => (
     <Stack
-        minWidth="340px"
+        minWidth="fit-content"
         height="100%"
         overflow={"hidden"}
         position="relative"
-        ml={"-60px"}
-        mr={"-60px"}
     >
         {children}
     </Stack>

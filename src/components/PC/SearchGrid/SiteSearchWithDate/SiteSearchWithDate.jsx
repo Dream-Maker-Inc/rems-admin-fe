@@ -139,7 +139,7 @@ const Root = ({ children }) => (
         alignItems={"flex-end"}
         width={"100%"}
         bgcolor={"#374750"}
-        padding={"16px"}
+        padding={"16px 24px"}
         color={"#fff"}
         whiteSpace={"nowrap"}
         borderRadius={"4px"}

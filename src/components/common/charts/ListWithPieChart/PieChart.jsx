@@ -25,10 +25,12 @@ const model = {
  */
 
 export const PieChart = ({ model }) => {
+    const { title, data } = model;
+
     const series = [
         {
-            name: model.title.label,
-            data: model.data.map((it, index) => ({
+            name: title.label,
+            data: data.map((it, index) => ({
                 name: it.label,
                 y: it.value,
                 sliced: index === 0,
@@ -36,9 +38,8 @@ export const PieChart = ({ model }) => {
             })),
         },
     ];
-    const colors = model.data.map((it) => it.color);
-
-    const dataLabelDistance = !(model.data.length - 1) ? -150 : -55;
+    const colors = data.map((it) => it.color);
+    const dataLabelDistance = !(data.length - 1) ? -70 : -35;
 
     const chartOptions = {
         chart: {
@@ -47,24 +48,18 @@ export const PieChart = ({ model }) => {
             plotShadow: false,
             type: "pie",
             backgroundColor: "transparent",
+            width: 240,
+            height: 240,
         },
-        title: {
-            style: { display: "none" },
-        },
+        title: { style: { display: "none" } },
         tooltip: {
             pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
-            style: {
-                fontSize: "1.6rem",
-            },
         },
-        accessibility: {
-            point: { valueSuffix: "%" },
-        },
+        accessibility: { point: { valueSuffix: "%" } },
         plotOptions: {
             pie: {
                 allowPointSelect: true,
                 cursor: "pointer",
-                size: "100%",
                 colors: colors,
                 borderColor: "#eeeeee33",
                 dataLabels: {
@@ -76,17 +71,14 @@ export const PieChart = ({ model }) => {
                         operator: ">",
                         value: 4,
                     },
-                    style: {
-                        textOutline: false,
-                        fontSize: "1.6rem",
-                    },
+                    style: { textOutline: false, fontSize: "1rem" },
                 },
                 showInLegend: true,
             },
         },
         series: series,
         legend: {
-            itemStyle: { color: "#fff", fontSize: "1.6rem" },
+            itemStyle: { color: "#fff" },
         },
         credits: { enabled: false },
     };
@@ -101,9 +93,6 @@ export const PieChart = ({ model }) => {
 const ChartWrapper = styled(Stack)`
     .highcharts-container,
     .highcharts-root {
-        width: 100% !important;
-        height: auto !important;
-        aspect-ratio: 16/10;
     }
 
     .highcharts-label {

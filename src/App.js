@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@mui/material/styles";
-import { ControlDashboardView } from "./components/PC/Dashboard/Control/ControlDashboardView";
+import { ZEBDashboardView } from "./components/PC/Dashboard/ZEB/ZEBDashboardView";
 import { MainTemplate } from "./components/PC/Main/MainTemplate";
 import { laptopTheme, mobileTheme } from "./themes/CustomThemes";
 import { useCustomMediaQuery } from "./themes/UseCustomMediaQuery";
@@ -10,7 +10,7 @@ function App() {
     return (
         <ThemeProvider theme={isTablet ? mobileTheme : laptopTheme}>
             <MainTemplate>
-                <ControlDashboardView />
+                <ZEBDashboardView />
             </MainTemplate>
         </ThemeProvider>
     );
