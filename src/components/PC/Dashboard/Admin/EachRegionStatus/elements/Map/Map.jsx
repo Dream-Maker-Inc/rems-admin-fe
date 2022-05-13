@@ -1,32 +1,40 @@
 import styled from "@emotion/styled";
 import { Stack, Typography } from "@mui/material";
+import { MapBackground } from "./MapBackground";
 
 /**
- * leftItems: ReactNode
- * rightItems: ReactNode
+ * models: {
+ *  [string of mapAreaTypes]: {
+ *    id: number,
+ *    title: string,
+ *    color: string,
+ *    content: ReactNode
+ *  },
+ * }
  * legends: {
  *  color: string,
  *  label: string
  * }[]
  * unit: string
  */
-export const Map = ({ leftItems, rightItems, legends, unit }) => {
+export const Map = ({ models, legends, unit }) => {
+    const left = models.slice(0, 5);
+    const right = models.slice(5, 10);
+
     return (
         <Root>
-            <Background
-                src={`${process.env.PUBLIC_URL}/assets/images/bg_dashboard_map.png`}
-                alt="dashboard-map"
-            />
+            <MapBackground models={models} />
+
             <Layer>
                 <LayerSection>
-                    {leftItems.map((it) => (
-                        <InnerBox>{it}</InnerBox>
+                    {left.map(({ id, content }) => (
+                        <InnerBox key={id}>{content}</InnerBox>
                     ))}
                 </LayerSection>
 
                 <LayerSection>
-                    {rightItems.map((it) => (
-                        <InnerBox>{it}</InnerBox>
+                    {right.map(({ id, content }) => (
+                        <InnerBox key={id}>{content}</InnerBox>
                     ))}
                 </LayerSection>
 
@@ -48,7 +56,7 @@ const Root = styled(Stack)`
     margin: -22px -22px -16px -22px; // 이미지 보정
 `;
 
-const Background = styled("img")`
+export const Background = styled("img")`
     width: 800px;
     height: 680px;
 `;
@@ -62,6 +70,7 @@ const Layer = styled(Stack)`
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 3;
 `;
 
 const LayerSection = styled(Stack)`
