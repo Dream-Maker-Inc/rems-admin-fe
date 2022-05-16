@@ -1,12 +1,11 @@
 import styled from "@emotion/styled";
-import { Button, Stack, Tooltip } from "@mui/material";
+import { Stack } from "@mui/material";
 import { laptopColor } from "../../../../../../themes/Color";
 import { LineChartWithLegend } from "../../../../../common/charts/LineChartWithLegend";
 import { ListWithPieChart } from "../../../../../common/charts/ListWithPieChart";
 import { PieChart } from "../../../../../common/charts/ListWithPieChart/PieChart";
 import { DataHighlight } from "../../../../../common/DataHighlight";
-import { ExcelIcon } from "../../../../../common/icons";
-import { LabelWithCircle } from "../../../../common/LabelWithCircle";
+import { ChartHeaderWithExcelButton } from "../../../../../common/charts/ChartHeaderWithExcelButton";
 
 export const EnergyDataInfo = () => {
     const model = {
@@ -68,7 +67,10 @@ export const EnergyDataInfo = () => {
         <Root>
             <Inner>
                 <Stack spacing={"8px"}>
-                    <Header title={"에너지원 별"} onExcelDownload={() => {}} />
+                    <ChartHeaderWithExcelButton
+                        title={"에너지원 별"}
+                        onExcelDownload={() => {}}
+                    />
 
                     <Row>
                         <ListWithPieChart
@@ -96,7 +98,7 @@ export const EnergyDataInfo = () => {
                 </Stack>
 
                 <Stack spacing={"8px"}>
-                    <Header
+                    <ChartHeaderWithExcelButton
                         title={"에너지 사용 설비 별"}
                         onExcelDownload={() => {}}
                     />
@@ -107,7 +109,7 @@ export const EnergyDataInfo = () => {
                 </Stack>
 
                 <Stack spacing={"8px"} width={"100%"}>
-                    <Header
+                    <ChartHeaderWithExcelButton
                         title={"에너지 사용 설비 별"}
                         onExcelDownload={() => {}}
                     />
@@ -166,22 +168,3 @@ const Row = styled(Stack)`
     flex-direction: row;
     gap: 24px;
 `;
-
-const Header = ({ title, onExcelDownload }) => {
-    return (
-        <Stack direction="row" width="100%" justifyContent={"space-between"}>
-            <LabelWithCircle title={title} />
-
-            <Tooltip title={"엑셀 파일로 다운로드"}>
-                <Button
-                    variant="contained"
-                    size="small"
-                    startIcon={<ExcelIcon />}
-                    onClick={onExcelDownload}
-                >
-                    다운로드
-                </Button>
-            </Tooltip>
-        </Stack>
-    );
-};

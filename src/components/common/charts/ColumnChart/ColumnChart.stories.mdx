@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { ColumnChart } from ".";
+
+<Meta title={"Common/ColumnChart"} component={ColumnChart} />
+
+# ColumnChart
+
+ColumnChart
+
+export const Template = (args) => <ColumnChart {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
