@@ -5,6 +5,7 @@ import { SiteSearchWithDate } from "../../../SearchGrid/SiteSearchWithDate";
 import { Overall } from "../views/Overall";
 import { EnergyDataInfo } from "../views/EnergyDataInfo";
 import { CustomTabs } from "../../../common/CustomTabs";
+import { EnergyDataAnalysis } from "../views/EnergyDataAnalysis";
 
 export const ZEBDashboardView = () => {
     const tabItems = [
@@ -24,6 +25,8 @@ export const ZEBDashboardView = () => {
                 return <Overall />;
             case 1:
                 return <EnergyDataInfo />;
+            case 2:
+                return <EnergyDataAnalysis />;
             default:
                 return;
         }

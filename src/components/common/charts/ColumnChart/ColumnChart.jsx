@@ -2,10 +2,10 @@ import styled from "@emotion/styled";
 import { Stack } from "@mui/material";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import { LineChartWithLegendMockData } from "./LineChartWithLegend.model";
+import { ColumnChartMockData } from "./ColumnChart.model";
 
-export const LineChartWithLegend = () => {
-    const models = LineChartWithLegendMockData;
+export const ColumnChart = () => {
+    const models = ColumnChartMockData;
     const { unit, items, dates } = models;
 
     const series = items.map((it) => ({
@@ -13,23 +13,34 @@ export const LineChartWithLegend = () => {
         data: it.data.map((it) => it.value),
     }));
 
-    const categories = dates;
-
     const chartOptions = {
         chart: {
+            type: "column",
             backgroundColor: "none",
             spacingTop: 48,
             spacingBottom: 36,
             height: 300,
         },
-        title: { style: { display: "none" } },
-
-        yAxis: {
-            title: { text: "" },
-            labels: { format: `{text} ${unit}`, style: { color: "#fff" } },
+        title: { text: "" },
+        xAxis: {
+            categories: dates,
+            crosshair: true,
+            labels: { style: { color: "#fff" } },
         },
-        xAxis: { categories: categories, labels: { style: { color: "#fff" } } },
-
+        yAxis: {
+            min: 0,
+            title: { text: "" },
+            labels: {
+                format: `{value} ${unit}`,
+                style: { color: "#fff" },
+            },
+        },
+        plotOptions: {
+            column: {
+                borderWidth: 0,
+            },
+        },
+        tooltip: { shared: true },
         legend: {
             layout: "vertical",
             align: "right",
@@ -40,26 +51,8 @@ export const LineChartWithLegend = () => {
             itemHoverStyle: { color: "#aaa" },
             width: 130,
         },
-
         series: series,
         credits: { enabled: false },
-
-        responsive: {
-            rules: [
-                {
-                    condition: {
-                        maxWidth: 500,
-                    },
-                    chartOptions: {
-                        legend: {
-                            layout: "horizontal",
-                            align: "center",
-                            verticalAlign: "bottom",
-                        },
-                    },
-                },
-            ],
-        },
     };
 
     return (

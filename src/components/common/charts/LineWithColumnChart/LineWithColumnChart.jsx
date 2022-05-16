@@ -66,6 +66,7 @@ export const LineWithColumnChart = () => {
 
             itemStyle: { color: "#fff" },
             itemHoverStyle: { color: "#aaa" },
+            width: 130,
         },
         series: [
             {
