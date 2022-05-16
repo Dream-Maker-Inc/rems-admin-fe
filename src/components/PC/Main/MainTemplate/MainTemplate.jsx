@@ -10,7 +10,9 @@ export const MainTemplate = ({ children }) => {
 
             <Right>
                 <MainHeader />
-                <ContentSection>{children}</ContentSection>
+                <ContentSection>
+                    <ContentWrapper>{children}</ContentWrapper>
+                </ContentSection>
             </Right>
         </Root>
     );
@@ -18,7 +20,6 @@ export const MainTemplate = ({ children }) => {
 
 const Root = styled(Stack)`
     flex-direction: row;
-    min-width: 1440px;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -33,5 +34,9 @@ const Right = styled(Stack)`
 const ContentSection = styled(Stack)`
     background-color: #303539;
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
+`;
+
+const ContentWrapper = styled(Stack)`
+    min-width: 1160px;
 `;

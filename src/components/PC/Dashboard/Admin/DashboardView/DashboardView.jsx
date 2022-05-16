@@ -27,7 +27,6 @@ const Root = ({ children }) => (
         spacing={"24px"}
         bgcolor={"#303539"}
         padding={"24px"}
-        overflow="auto"
     >
         {children}
     </Stack>
