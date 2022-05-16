@@ -13,7 +13,7 @@ export const DashboardView = () => {
                 <OperationalStatus />
             </Left>
 
-            <Stack>
+            <Stack height={"fit-content"}>
                 <EachRegionStatus />
             </Stack>
         </Root>
@@ -27,6 +27,7 @@ const Root = ({ children }) => (
         spacing={"24px"}
         bgcolor={"#303539"}
         padding={"24px"}
+        overflow="auto"
     >
         {children}
     </Stack>

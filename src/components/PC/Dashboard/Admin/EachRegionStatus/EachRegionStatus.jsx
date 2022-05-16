@@ -22,7 +22,11 @@ export const EachRegionStatus = () => {
     };
 
     return (
-        <CardTemplate title={"지역별 현황"} width={"fit-content"}>
+        <CardTemplate
+            title={"지역별 현황"}
+            width={"fit-content"}
+            height={"auto"}
+        >
             <Stack width={"fit-content"}>
                 <ToggleButtonGroup
                     exclusive

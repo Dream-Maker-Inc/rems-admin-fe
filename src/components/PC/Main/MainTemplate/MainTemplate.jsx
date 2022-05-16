@@ -21,11 +21,13 @@ const Root = styled(Stack)`
     min-width: 1440px;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 `;
 
 const Right = styled(Stack)`
     width: 100%;
     height: 100%;
+    overflow: hidden;
 `;
 
 const ContentSection = styled(Stack)`
