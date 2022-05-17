@@ -2,10 +2,13 @@ import styled from "@emotion/styled";
 import { Stack } from "@mui/material";
 import { useState } from "react";
 import { SiteSearchWithDate } from "../../../SearchGrid/SiteSearchWithDate";
-import { Overall } from "../views/Overall";
-import { EnergyDataInfo } from "../views/EnergyDataInfo";
 import { CustomTabs } from "../../../common/CustomTabs";
-import { EnergyDataAnalysis } from "../views/EnergyDataAnalysis";
+import {
+    Overall,
+    EnergyDataInfo,
+    EnergyDataAnalysis,
+    CostInfo,
+} from "../views";
 
 export const ZEBDashboardView = () => {
     const tabItems = [
@@ -27,6 +30,8 @@ export const ZEBDashboardView = () => {
                 return <EnergyDataInfo />;
             case 2:
                 return <EnergyDataAnalysis />;
+            case 3:
+                return <CostInfo />;
             default:
                 return;
         }

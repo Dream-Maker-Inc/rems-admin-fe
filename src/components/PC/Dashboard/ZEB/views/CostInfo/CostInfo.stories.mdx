@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { CostInfo } from ".";
+
+<Meta title={"PC/Dashboard/ZEB/views/비용 조회"} component={CostInfo} />
+
+# CostInfo
+
+비용 조회
+
+export const Template = (args) => <CostInfo {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
