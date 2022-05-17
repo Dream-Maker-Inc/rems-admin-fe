@@ -51,5 +51,6 @@ const StyledTab = styled(Tab)`
     &.Mui-selected {
         border-color: ${laptopColor.primary};
         border-bottom: 2px solid #3a3f43;
+        background-color: #3a3f43;
     }
 `;
