@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { ControlMenu } from ".";
+
+<Meta title={"PC/PartnerMenu/ControlMenu"} component={ControlMenu} />
+
+# ControlMenu
+
+ControlMenu
+
+export const Template = (args) => <ControlMenu {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

@@ -1,0 +1,1 @@
+export { PartnerMenuView } from "./PartnerMenuView";
