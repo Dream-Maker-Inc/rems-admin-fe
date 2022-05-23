@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { TransferList } from ".";
+
+<Meta title={"PC/User-Assign/Transfer List"} component={TransferList} />
+
+# TransferList
+
+Transfer List
+
+export const Template = (args) => <TransferList {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
