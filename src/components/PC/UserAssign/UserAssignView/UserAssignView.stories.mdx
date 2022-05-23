@@ -1,0 +1,18 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { UserAssignView } from ".";
+
+<Meta
+    title={"PC/User-Assign/[Page] 사용자 할당 뷰"}
+    component={UserAssignView}
+/>
+
+# UserAssignView
+
+사용자 할당 뷰
+
+export const Template = (args) => <UserAssignView {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

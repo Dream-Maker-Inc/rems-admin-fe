@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTemplate } from "./components/PC/Main/MainTemplate";
-import { PartnerMenuView } from "./components/PC/PartnerMenu/PartnerMenuView/PartnerMenuView";
+import { UserAssignView } from "./components/PC/UserAssign/UserAssignView/UserAssignView";
 import { laptopTheme, mobileTheme } from "./themes/CustomThemes";
 import { useCustomMediaQuery } from "./themes/UseCustomMediaQuery";
 
@@ -10,7 +10,7 @@ function App() {
     return (
         <ThemeProvider theme={isTablet ? mobileTheme : laptopTheme}>
             <MainTemplate>
-                <PartnerMenuView />
+                <UserAssignView />
             </MainTemplate>
         </ThemeProvider>
     );
