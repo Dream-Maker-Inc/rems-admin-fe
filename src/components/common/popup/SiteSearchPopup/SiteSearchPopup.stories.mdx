@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SiteSearchPopup } from ".";
+
+<Meta title={"Control/[Popup] 사이트 검색 팝업"} component={SiteSearchPopup} />
+
+# SiteSearchPopup
+
+사이트 검색 팝업
+
+export const Template = (args) => <SiteSearchPopup {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
