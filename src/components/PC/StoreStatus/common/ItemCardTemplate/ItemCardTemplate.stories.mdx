@@ -1,0 +1,20 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { ItemCardTemplate } from ".";
+
+<Meta
+    title={"PC/StoreStatus/common/아이템 카드 템플릿"}
+    component={ItemCardTemplate}
+/>
+
+# ItemCardTemplate
+
+아이템 카드 템플릿
+
+export const Template = (args) => <ItemCardTemplate {...args} />;
+
+<Canvas>
+    <Story name="Default" args={{ title: "title", children: "contents" }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>

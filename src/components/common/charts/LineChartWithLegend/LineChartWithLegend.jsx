@@ -4,7 +4,7 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { LineChartWithLegendMockData } from "./LineChartWithLegend.model";
 
-export const LineChartWithLegend = () => {
+export const LineChartWithLegend = ({ legendWidth = 130 }) => {
     const models = LineChartWithLegendMockData;
     const { unit, items, dates } = models;
 
@@ -38,7 +38,7 @@ export const LineChartWithLegend = () => {
 
             itemStyle: { color: "#fff" },
             itemHoverStyle: { color: "#aaa" },
-            width: 130,
+            width: legendWidth,
         },
 
         series: series,
