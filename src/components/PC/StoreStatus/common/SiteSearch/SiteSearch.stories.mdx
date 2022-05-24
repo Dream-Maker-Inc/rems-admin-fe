@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { SiteSearch } from ".";
+
+<Meta title={"PC/StoreStatus/사이트 검색"} component={SiteSearch} />
+
+# SiteSearch
+
+사이트 검색
+
+export const Template = (args) => <SiteSearch {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

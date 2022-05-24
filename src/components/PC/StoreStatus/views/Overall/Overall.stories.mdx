@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { Overall } from ".";
+
+<Meta title={"PC/StoreStatus/views/종합 뷰"} component={Overall} />
+
+# Overall
+
+종합 뷰
+
+export const Template = (args) => <Overall {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
