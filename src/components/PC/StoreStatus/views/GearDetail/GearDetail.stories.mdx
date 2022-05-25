@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import { GearDetail } from ".";
+
+<Meta title={"PC/StoreStatus/views/설비 상세 뷰"} component={GearDetail} />
+
+# GearDetail
+
+설비 상세 뷰
+
+export const Template = (args) => <GearDetail {...args} />;
+
+<Canvas>
+    <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
