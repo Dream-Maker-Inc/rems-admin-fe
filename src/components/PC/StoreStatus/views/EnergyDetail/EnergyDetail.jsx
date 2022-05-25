@@ -1,6 +1,6 @@
 import { Stack } from "@mui/material";
 import { LabelWithCircle } from "../../../../common/LabelWithCircle";
-import { UsageTableWithLineChart } from "./elements/UsageTableWithLineChart";
+import { UsageTableWithLineChart } from "../../common/UsageTableWithLineChart";
 
 export const EnergyDetail = () => {
     const models = [
@@ -69,7 +69,6 @@ export const EnergyDetail = () => {
                                 key={index}
                                 headers={headers}
                                 models={it.data}
-                                y
                                 tableTitle={it.table.title}
                                 chartTitle={it.lineChart.title}
                             />

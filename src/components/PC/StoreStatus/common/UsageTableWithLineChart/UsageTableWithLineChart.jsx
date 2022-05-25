@@ -1,14 +1,14 @@
 import { Stack, TableBody, TableHead, TableRow } from "@mui/material";
 import { useState } from "react";
-import { LineChartWithLegend } from "../../../../../common/charts/LineChartWithLegend";
+import { LineChartWithLegend } from "../../../../common/charts/LineChartWithLegend";
 import {
     BasicTable,
     BasicTableContainer,
     BasicTd,
     BasicTdRow,
     BasicTh,
-} from "../../../../../common/tables/BasicTable";
-import { ItemCardTemplate } from "../../../common/ItemCardTemplate";
+} from "../../../../common/tables/BasicTable";
+import { ItemCardTemplate } from "../ItemCardTemplate";
 
 export const UsageTableWithLineChart = ({
     headers,
