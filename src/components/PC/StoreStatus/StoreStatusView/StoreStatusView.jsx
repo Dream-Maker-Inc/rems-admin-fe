@@ -2,7 +2,7 @@ import { Stack } from "@mui/material";
 import { useState } from "react";
 import { CustomTabs } from "../../common/CustomTabs";
 import { SiteSearch } from "../common/SiteSearch/SiteSearch";
-import { Overall, EnergyDetail, GearDetail } from "../views";
+import { Overall, EnergyDetail, GearDetail, Notification } from "../views";
 
 export const StoreStatusView = () => {
     const tabItems = ["종합", "에너지 상세", "설비 상세", "알람"];
@@ -19,7 +19,7 @@ export const StoreStatusView = () => {
             case 2:
                 return <GearDetail />;
             case 3:
-                return;
+                return <Notification />;
             default:
                 return;
         }
